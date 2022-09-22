@@ -24,10 +24,10 @@
   </div>
 
   <div class="container_from container--signin">
-    <form action="#" class="from" id="from2">
+    <form action="../servlet/LoginController" class="from" id="from2">
       <h2 class="from_title">欢迎登录</h2>
-      <input type="text" placeholder="手机或用户名" class="input">
-      <input type="password" placeholder="密码" class="input">
+      <input name="loginname" type="text" placeholder="手机或用户名" class="input">
+      <input name="password" type="password" placeholder="密码" class="input">
       <button class="btn">登录</button>
     </form>
     </form>

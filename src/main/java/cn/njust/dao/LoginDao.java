@@ -8,11 +8,11 @@ public class LoginDao extends BaseDao {
     public User findSingleUser(User user) {
         try {
             super.connect();
-            String sql = "select * from user where user_password=? and user_id=? or user_number=?";
+            String sql = "select * from user where user_password=? and user_id=?";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, user.getId());
             pstmt.setString(2, user.getPassword());
-            pstmt.setString(3, user.getNumber());
+          //  pstmt.setString(3, user.getNumber());
             rs = pstmt.executeQuery();
             if (rs.next())               // 如果可以next,代表查找到了这个用户的信息，将结果集中的信息封装到User对象中
             {
