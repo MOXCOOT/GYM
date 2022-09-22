@@ -31,6 +31,12 @@ public class LoginController extends HttpServlet {
             System.out.println("sub");
             RegisterService rg = new RegisterService();
             int Rg_result = rg.registerNew(name_sub,phone,pwd1,pwd2);
+            if(Rg_result==0)
+                    response.sendRedirect("/GYM_manage_war_exploded/page/login.jsp?error=yes1");
+        else
+                response.sendRedirect("/GYM_manage_war_exploded/page/login.jsp?error=yes2");
+
+
         }
 
         if(login!=null)
