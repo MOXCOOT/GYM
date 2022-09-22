@@ -37,12 +37,11 @@ public class LoginController extends HttpServlet {
         {
             System.out.println("login");
             LoginService lg=new LoginService();
-//            if(lg.login(name,pwd)==1)
-//            {
-//                //正确登录，转到个人主页
-//
-//            }
-            request.getRequestDispatcher("../page/client_order.jsp").forward(request, response);
+            if(lg.login(name,pwd)==1)
+            {
+                //正确登录，转到个人主页
+                request.getRequestDispatcher("../page/client_order.jsp").forward(request, response);
+            }
         }
 
 
