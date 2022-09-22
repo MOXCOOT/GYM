@@ -15,6 +15,7 @@ public class Register {
         //检验两次密码是否一致
         if(!password1.equals(password2))
             return 1;
+        String uid;
         do {
                 //随机生成五位数字作为用户ID
                 String str = "0123456789";
@@ -24,14 +25,12 @@ public class Register {
                     int num = random.nextInt(10);
                     stringBuffer.append(str.charAt(num));
                 }
-                String uid = stringBuffer.toString();
-
+                uid = stringBuffer.toString();
                 newid.setId(uid);
             }
-        while(false);//查找数据库检验是否有重复ID
+        while(UserDao.findSingleUser(uid)!=null);//查找数据库检验是否有重复ID
         newid.setPassword(password1);
-        UserDao dao=new UserDao();
-        //dao.insertSingleUser();
+        UserDao.insertSingleUser(newid);
         //将数据插入数据库
         return 0;
     }
