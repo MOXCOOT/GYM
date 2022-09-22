@@ -3,6 +3,7 @@ package cn.njust.controller;
 import cn.njust.Service.Customer.RegisterService;
 import cn.njust.Service.Login.LoginService;
 
+import cn.njust.entity.User;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -32,19 +33,28 @@ public class LoginController extends HttpServlet {
             RegisterService rg = new RegisterService();
             int Rg_result = rg.registerNew(name_sub,phone,pwd1,pwd2);
             if(Rg_result==0)
-                    response.sendRedirect("/GYM_manage_war_exploded/page/login.jsp?error=yes1");
-        else
+                    response.sendRedirect("/GYM_manage_war_exploded/page/login.jsp?error=yes0");
+        else if (Rg_result==1)
+                response.sendRedirect("/GYM_manage_war_exploded/page/login.jsp?error=yes1");
+        else if(Rg_result==2)
                 response.sendRedirect("/GYM_manage_war_exploded/page/login.jsp?error=yes2");
-
-
+            else if(Rg_result==3)
+                response.sendRedirect("/GYM_manage_war_exploded/page/login.jsp?error=yes3");
+            //返回 3 代表手机号错误或已被注册
+            //返回 2 代表有空空值
+            //返回 1 代表两次密码不一致
+            //返回 0 代表注册成功
+            //检验两次密码是否一致
         }
 
         if(login!=null)
         {
             System.out.println("login");
             LoginService lg=new LoginService();
-            if(lg.login(name,pwd)==1)
+            User loginNow=lg.login(name,pwd);
+            if(lg.login(name,pwd)!=null)
             {
+                request.getSession().setAttribute("user",loginNow);
                 //正确登录，转到个人主页
                 request.getRequestDispatcher("../page/client_order.jsp").forward(request, response);
             }

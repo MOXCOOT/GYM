@@ -3,12 +3,20 @@
 <script>
   //取出传回来的参数error并与yes比较
   var error ='<%=request.getParameter("error")%>';
-  if(error=='yes1'){
+  if(error=='yes0'){
     alert("注册成功!");
     window.location.href = "/GYM_manage_war_exploded/page/login.jsp";
   }
+  if(error=='yes1'){
+    alert("输入两次密码不一致");
+    window.location.href = "/GYM_manage_war_exploded/page/login.jsp";
+  }
   if(error=='yes2'){
-    alert("注册失败");
+    alert("输入不能为空");
+    window.location.href = "/GYM_manage_war_exploded/page/login.jsp";
+  }
+  if(error=='yes3'){
+    alert("手机号错误或已被注册");
     window.location.href = "/GYM_manage_war_exploded/page/login.jsp";
   }
 </script>
