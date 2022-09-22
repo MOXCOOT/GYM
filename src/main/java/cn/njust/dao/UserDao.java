@@ -38,6 +38,12 @@ public class UserDao {
         return users;
     }
 
+    public static User findSingleUser(String id_phone)
+    {
+        return null;
+    }
+
+
 
     /**
      *   输入user,实现该用户信息插入
