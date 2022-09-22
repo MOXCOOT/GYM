@@ -1,5 +1,6 @@
+<%@ page import="cn.njust.entity.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--<%@ page import=""@%>--%>
+<%@ page import="java.lang.String"%>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -47,8 +48,12 @@
                     <img src="../img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
+                    <%
+                        User u=(User) request.getSession().getAttribute("user");
+                        System.out.println(u.getName());
+                    %>
 
-                    <a href="#" class="d-block">zhang></a>
+                    <a href="#" class="d-block"><%=u.getName()%></a>
                 </div>
             </div>
 
