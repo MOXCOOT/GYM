@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
-public class Rent {
+public class RentService {
     public Equipment[] searchEquipment(){
         return null;
     }
@@ -42,7 +42,7 @@ public class Rent {
     }
 
     public static void main(String[] args){
-        Rent t=new Rent();
+        RentService t=new RentService();
         //t.equipmentOrder("0","0",0);
     }
 }

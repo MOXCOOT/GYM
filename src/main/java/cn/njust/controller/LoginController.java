@@ -1,8 +1,7 @@
 package cn.njust.controller;
 
-import cn.njust.Service.Customer.Register;
-import cn.njust.Service.Login.Login;
-import cn.njust.entity.User;
+import cn.njust.Service.Customer.RegisterService;
+import cn.njust.Service.Login.LoginService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -30,14 +29,14 @@ public class LoginController extends HttpServlet {
         if(sub!=null)
         {
             System.out.println("sub");
-            Register rg = new Register();
+            RegisterService rg = new RegisterService();
             int Rg_result = rg.registerNew(name_sub,phone,pwd1,pwd2);
         }
 
         if(login!=null)
         {
             System.out.println("login");
-            Login lg=new Login();
+            LoginService lg=new LoginService();
 //            if(lg.login(name,pwd)==1)
 //            {
 //                //正确登录，转到个人主页

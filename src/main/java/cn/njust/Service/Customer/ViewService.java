@@ -5,7 +5,7 @@ import cn.njust.dao.*;
 
 import java.util.List;
 
-public class View {
+public class ViewService {
     public List<Equipment> viewEquipment()
     {
         return EquipmentDao.findAllEquipment();
