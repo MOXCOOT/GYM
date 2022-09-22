@@ -1,5 +1,4 @@
 package cn.njust.utils;
-
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import com.mchange.v2.c3p0.DataSources;
 
@@ -40,10 +39,10 @@ public class DBConnectionPool {
                 username = properties.getProperty("username");
                 password = properties.getProperty("password");
              }else {
-            	 driverClassName = "com.mysql.cj.jdbc.Driver";
+            	 driverClassName = "com.mysql.jdbc.Driver";
                  url = "jdbc:mysql://localhost:3306/gym";
                  username = "root";
-                 password = "root";
+                 password = "123456";
              }  
 
             /**数据库连接池对象**/

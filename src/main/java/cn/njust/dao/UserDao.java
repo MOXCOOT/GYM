@@ -114,10 +114,13 @@ public class UserDao extends BaseDao{
             e.printStackTrace();
         }
     }
-   public static void main(String[] args) {
+  /* public static void main(String[] args) {
         // 1.测试单条插入 成功
        User a=new User();
-       a.setId("0");
+       a.setId("alllll");
+       a.setNumber("65496");
+       a.setPassword("fdras");
+       a.setName("fsdafasd");
        insertSingleUser(a);
         // 2.测试更新 成功
        // updateUser();
@@ -125,5 +128,5 @@ public class UserDao extends BaseDao{
         // deleteUser();
 
 
-    }
+    }*/
 }

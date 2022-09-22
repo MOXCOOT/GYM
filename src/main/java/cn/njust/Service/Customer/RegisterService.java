@@ -31,8 +31,10 @@ public class RegisterService {
 
                 newid.setId(uid);
             }
-        while(dao.findSingleUser(uid)!=null);//查找数据库检验是否有重复ID
+        while(dao.findSingleUser(uid)==null);//查找数据库检验是否有重复ID
         newid.setPassword(password1);
+        newid.setName(name);
+        newid.setNumber(number);
         UserDao.insertSingleUser(newid);
         System.out.println("服务端插入成功");
         //将数据插入数据库
