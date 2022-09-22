@@ -2,7 +2,7 @@ package cn.njust.Service.Admin;
 
 import cn.njust.entity.*;
 
-public class View {
+public class ViewService {
     public Equipment[] viewEquipment(){
         return null;
     }

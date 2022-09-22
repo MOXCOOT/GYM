@@ -1,9 +1,6 @@
 package cn.njust.Service.Customer;
 
-import cn.njust.dao.OrderDao;
-import cn.njust.entity.*;
-
-public class Return {
+public class ReturnService {
     public void returnBack(String oid)
     {
 //        Order orderTemp =new Order();

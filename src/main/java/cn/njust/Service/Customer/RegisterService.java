@@ -3,10 +3,9 @@ package cn.njust.Service.Customer;
 import cn.njust.dao.UserDao;
 import cn.njust.entity.*;
 
-import java.util.Objects;
 import java.util.Random;
 
-public class Register {
+public class RegisterService {
     public int registerNew(String name,String number,String password1,String password2)
     {
         UserDao dao=new UserDao();

@@ -5,7 +5,7 @@ import cn.njust.entity.*;
 
 import cn.njust.dao.*;
 
-public class Login {
+public class LoginService {
     public int login(String id_phone,String pwd)
     {
         UserDao dao=new UserDao();

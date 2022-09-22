@@ -1,12 +1,11 @@
 package cn.njust.controller;
 
-import cn.njust.Service.Customer.Register;
-import cn.njust.Service.Login.Login;
-import cn.njust.entity.User;
+import cn.njust.Service.Customer.RegisterService;
+import cn.njust.Service.Login.LoginService;
 
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -30,22 +29,19 @@ public class LoginController extends HttpServlet {
         if(sub!=null)
         {
             System.out.println("sub");
-            Register rg = new Register();
+            RegisterService rg = new RegisterService();
             int Rg_result = rg.registerNew(name_sub,phone,pwd1,pwd2);
-            System.out.println("插入成功");
         }
 
         if(login!=null)
         {
             System.out.println("login");
-            Login lg=new Login();
+            LoginService lg=new LoginService();
             if(lg.login(name,pwd)==1)
             {
                 //正确登录，转到个人主页
                 request.getRequestDispatcher("../page/client_order.jsp").forward(request, response);
-
             }
-
         }
 
 
