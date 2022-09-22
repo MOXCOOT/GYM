@@ -8,7 +8,8 @@ import cn.njust.dao.*;
 public class Login {
     public int login(String id_phone,String pwd)
     {
-        User userCorrect = UserDao.findSingleUser(id_phone);
+        UserDao dao=new UserDao();
+        User userCorrect = dao.findSingleUser(id_phone);
         if(pwd.equals(userCorrect.getPassword()))return 0;//正确登录
         return 1;
     }

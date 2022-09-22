@@ -18,7 +18,7 @@
   </div>
 
   <div class="container_from container--signup">
-    <form action="#" class="from" id="from1">
+    <form action="../servlet/LoginController" class="from" >
       <h2 class="from_title">注册账号</h2>
       <input name="name_sub" type="text" placeholder="姓名" class="input">
       <input name="phone" type="text" placeholder="手机号" class="input">

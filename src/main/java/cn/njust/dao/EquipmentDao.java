@@ -19,7 +19,7 @@ public class EquipmentDao extends BaseDao {
     public static List<Equipment> findAllEquipment(){
         String sql = "select * from equipment";
         List<Map<String, Object>> list = null;
-        List<Equipment> equipments=new ArrayList<Equipment>();
+        List<Equipment> equipments= new ArrayList<>();
         try {
             list = DBUtil.query(sql);
         } catch (SQLException e) {
@@ -42,11 +42,11 @@ public class EquipmentDao extends BaseDao {
 
 
 
-    public static void main(String[] args)
+   /* public static void main(String[] args)
     {
         EquipmentDao.findAllEquipment();
 
-    }
+    }*/
 
     /**
      *   输入equipment,实现器材信息删除

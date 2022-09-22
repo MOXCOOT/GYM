@@ -12,14 +12,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class UserDao {
+public class UserDao extends BaseDao{
     /**
      * 查找用户,返回用户信息数组
      */
     public static List<User> findAllUser(){
         String sql = "select * from user";
         List<Map<String, Object>> list = null;
-        List<User> users=new ArrayList<User>();
+        List<User> users= new ArrayList<>();
         try {
             list = DBUtil.query(sql);
         } catch (SQLException e) {
@@ -32,16 +32,42 @@ public class UserDao {
             j.setPassword(i.get("user_password").toString());
             j.setName(i.get("user_name").toString());
             j.setNumber(i.get("user_number").toString());
-
         }
         //System.out.println(list.get(0).get("user_state"));
         return users;
     }
 
-    public static User findSingleUser(String id_phone)
-    {
-        return null;
+    public User findSingleUser(String id_phone) {
+        User u = new User();
+        try {
+            super.connect();
+            String sql = "select * from user where user_id=? or user_number=?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, id_phone);
+            pstmt.setString(2, id_phone);
+            //  pstmt.setString(3, user.getNumber());
+            rs = pstmt.executeQuery();
+            if (rs.next())               // 如果可以next,代表查找到了这个用户的信息，将结果集中的信息封装到User对象中
+            {
+                u.setId(rs.getString("user_id"));
+                u.setName(rs.getString("user_name"));
+                u.setNumber(rs.getString("user_number"));
+                u.setPassword(rs.getString("user_password"));
+                // System.out.println(rs.getString("user_id"));
+                // System.out.println(rs.getString("user_name"));        用户信息查询测试
+                return u;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            super.closeAll();
+        }
+        return u;
     }
+
+
+
+
 
 
 

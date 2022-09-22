@@ -9,6 +9,7 @@ import java.util.Random;
 public class Register {
     public int registerNew(String name,String number,String password1,String password2)
     {
+        UserDao dao=new UserDao();
         User newid=new User();
         //返回 1 代表两次密码不一致
         //返回 0 代表注册成功
@@ -26,11 +27,15 @@ public class Register {
                     stringBuffer.append(str.charAt(num));
                 }
                 uid = stringBuffer.toString();
+
+                System.out.println(uid);
+
                 newid.setId(uid);
             }
-        while(UserDao.findSingleUser(uid)!=null);//查找数据库检验是否有重复ID
+        while(dao.findSingleUser(uid)!=null);//查找数据库检验是否有重复ID
         newid.setPassword(password1);
         UserDao.insertSingleUser(newid);
+        System.out.println("服务端插入成功");
         //将数据插入数据库
         return 0;
     }

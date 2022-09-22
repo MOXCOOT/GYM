@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>体育馆管理系统 | 我的首页</title>
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="css/adminlte.min.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../css/adminlte.min.css">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper" >
@@ -98,7 +98,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../tables/simple.html" class="nav-link">
+                                <a href="../page/simple.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>所有订单</p>
                                 </a>

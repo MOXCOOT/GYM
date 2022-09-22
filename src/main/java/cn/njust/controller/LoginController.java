@@ -4,9 +4,9 @@ import cn.njust.Service.Customer.Register;
 import cn.njust.Service.Login.Login;
 import cn.njust.entity.User;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -32,18 +32,20 @@ public class LoginController extends HttpServlet {
             System.out.println("sub");
             Register rg = new Register();
             int Rg_result = rg.registerNew(name_sub,phone,pwd1,pwd2);
+            System.out.println("插入成功");
         }
 
         if(login!=null)
         {
             System.out.println("login");
             Login lg=new Login();
-//            if(lg.login(name,pwd)==1)
-//            {
-//                //正确登录，转到个人主页
-//
-//            }
-            request.getRequestDispatcher("../page/client_order.jsp").forward(request, response);
+            if(lg.login(name,pwd)==1)
+            {
+                //正确登录，转到个人主页
+                request.getRequestDispatcher("../page/client_order.jsp").forward(request, response);
+
+            }
+
         }
 
 
