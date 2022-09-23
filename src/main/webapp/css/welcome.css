@@ -1,0 +1,35 @@
+:root{
+    --white:#e9e9e9;
+    --gray:#333;
+    --blue:#0367a6;
+    --lightblue:#008997;
+
+    --button-radius:0.7rem;
+    --max-width:758px;
+    --max-height:420px;
+}
+
+.welcome{
+    align-items: center;
+    background-color: var(--white);
+    background: url(../img/tiyuguan2.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    height: 100vh;
+    place-items: center;
+    opacity: 0.6;
+}
+
+.p_welcome{
+    font-size: 120px;
+    margin: 0;
+    margin-bottom: 1.25rem;
+    font-family: STKaiti;
+    color: transparent;
+    background-color : black;
+    text-shadow : rgba(255,255,255,0.8) 0 5px 6px, rgba(255,255,255,0.5) 1px 3px 3px;
+    -webkit-background-clip : text;
+}

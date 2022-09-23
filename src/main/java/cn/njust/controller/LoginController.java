@@ -53,7 +53,7 @@ public class LoginController extends HttpServlet {
             {
                 request.getSession().setAttribute("user",loginNow);
                 //正确登录，转到个人主页
-                request.getRequestDispatcher("../page/client_order.jsp").forward(request, response);
+                request.getRequestDispatcher("../page/welcome.jsp").forward(request, response);
             }
             else {
                 request.getSession().setAttribute("message","登录错误！请重新登录");

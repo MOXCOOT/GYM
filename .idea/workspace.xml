@@ -9,13 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5de2a841-ecdd-45aa-906e-37c66a557529" name="变更" comment="更新订单逻辑">
+    <list default="true" id="5de2a841-ecdd-45aa-906e-37c66a557529" name="变更" comment="更新至完成订单逻辑">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/welcome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/page/welcome.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Admin/ViewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Admin/ViewAllService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/entity/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client/order/client_order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client/order/client_order.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client/shop/equipment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client/shop/equipment.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +46,6 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHome" value="Use Maven wrapper" />
-        <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -59,18 +57,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/24117/Desktop/ws/GYM/src/main/webapp/WEB-INF/lib/mysql-connector-java.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.39425287&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/page/client/shop" />
+    <property name="project.structure.last.edited" value="库" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.36204576" />
+  </component>
   <component name="RunManager" selected="Tomcat 服务器.Tomcat 8.5.51">
     <configuration name="MessageDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.njust.dao.MessageDao" />
+      <module name="GYM_manage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.njust.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.njust.dao.OrderDao" />
       <module name="GYM_manage" />
       <extension name="coverage">
         <pattern>
@@ -95,7 +105,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 8.5.51" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.51" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="Tomcat 8.5.51" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.16" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
         <artifact name="GYM_manage:war exploded">
           <settings>
@@ -181,233 +191,16 @@
         </option>
       </method>
     </configuration>
-    <configuration name="client_order.jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 8.5.51" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/page/client_order.jsp" />
-      <deployment>
-        <artifact name="GYM_manage:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/GYM_manage_war_exploded" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="0c5d8e79-0093-4204-bdc2-c111ff907c78" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="61269" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="GYM_manage:war exploded" />
-        </option>
-      </method>
-    </configuration>
-    <configuration name="client_venue.jsp (1)" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 8.5.51" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/page/client/venue/client_venue.jsp" />
-      <deployment>
-        <artifact name="GYM_manage:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/GYM_manage_war_exploded" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="bbb6cd93-4b49-4e9b-8abc-f7dd46da616b" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="GYM_manage:war exploded" />
-        </option>
-      </method>
-    </configuration>
-    <configuration name="client_venue.jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 8.5.51" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/page/client/venue/client_venue.jsp" />
-      <deployment>
-        <artifact name="GYM_manage:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/GYM_manage_war_exploded" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="a7fbc683-52c7-49c6-a251-d79b3d9b37f1" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="61268" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="GYM_manage:war exploded" />
-        </option>
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Tomcat 服务器.Tomcat 8.5.51" />
-      <item itemvalue="Tomcat 服务器.client_order.jsp" />
-      <item itemvalue="Tomcat 服务器.client_venue.jsp" />
-      <item itemvalue="Tomcat 服务器.client_venue.jsp (1)" />
       <item itemvalue="应用程序.MessageDao" />
       <item itemvalue="应用程序.UserDao" />
+      <item itemvalue="应用程序.OrderDao" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.OrderDao" />
         <item itemvalue="应用程序.UserDao" />
-        <item itemvalue="Tomcat 服务器.client_venue.jsp (1)" />
-        <item itemvalue="Tomcat 服务器.client_venue.jsp" />
-        <item itemvalue="Tomcat 服务器.client_order.jsp" />
         <item itemvalue="应用程序.MessageDao" />
       </list>
     </recent_temporary>
@@ -425,7 +218,10 @@
       <workItem from="1663819409976" duration="50000" />
       <workItem from="1663840315358" duration="3695000" />
       <workItem from="1663844753470" duration="2205000" />
-      <workItem from="1663919951746" duration="6218000" />
+      <workItem from="1663919951746" duration="332000" />
+      <workItem from="1663923896437" duration="283000" />
+      <workItem from="1663924281218" duration="8174000" />
+      <workItem from="1663937533627" duration="870000" />
     </task>
     <task id="LOCAL-00001" summary="登录功能改变">
       <created>1663858811786</created>
@@ -462,28 +258,42 @@
       <option name="project" value="LOCAL" />
       <updated>1663920076927</updated>
     </task>
-    <task id="LOCAL-00006" summary="更新注册逻辑">
-      <created>1663920301451</created>
+    <task id="LOCAL-00006" summary="登录与注册功能改变">
+      <created>1663921759807</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1663920301451</updated>
+      <updated>1663921759807</updated>
     </task>
-    <task id="LOCAL-00007" summary="更新登录逻辑">
-      <created>1663921257333</created>
+    <task id="LOCAL-00007" summary="登录与注册功能改变">
+      <created>1663924028693</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1663921257333</updated>
+      <updated>1663924028693</updated>
     </task>
-    <task id="LOCAL-00008" summary="更新订单逻辑">
-      <created>1663931437179</created>
+    <task id="LOCAL-00008" summary="订单页面功能改变">
+      <created>1663932621765</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1663931437179</updated>
+      <updated>1663932621765</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="订单页面功能改变">
+      <created>1663932826983</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1663932826983</updated>
+    </task>
+    <task id="LOCAL-00010" summary="更新至完成订单逻辑">
+      <created>1663937439637</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1663937439637</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -499,15 +309,26 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="登录功能改变" />
     <MESSAGE value="注册功能改变" />
     <MESSAGE value="Test" />
-    <MESSAGE value="更新注册逻辑" />
-    <MESSAGE value="更新登录逻辑" />
-    <MESSAGE value="更新订单逻辑" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新订单逻辑" />
+    <MESSAGE value="登录与注册功能改变" />
+    <MESSAGE value="订单页面功能改变" />
+    <MESSAGE value="更新至完成订单逻辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新至完成订单逻辑" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
