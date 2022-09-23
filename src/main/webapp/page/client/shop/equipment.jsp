@@ -1,3 +1,4 @@
+<%@ page import="cn.njust.entity.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--<%@ page import=""@%>--%>
 <html lang="en">
@@ -45,7 +46,11 @@
                     <img src="../../../img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">张少威</a>
+                    <%
+                        User u=(User) request.getSession().getAttribute("user");
+                    %>
+
+                    <a href="#" class="d-block"><%=u.getName()%></a>
                 </div>
             </div>
 
@@ -108,7 +113,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../../../page/client/order/client_order.jsp" class="nav-link">
+                                <a href="../../../servlet/OrderController" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>所有订单</p>
                                 </a>
