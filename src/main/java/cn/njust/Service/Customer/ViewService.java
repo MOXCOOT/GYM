@@ -16,7 +16,9 @@ public class ViewService {
     }
     public List<Order> viewOrder(String uid)
     {
-        return OrderDao.findAllOrder();
+      //  System.out.println(OrderDao.findAllOrderByUserid(uid));
+        return OrderDao.findAllOrderByUserid(uid);
+
     }
     public List<Message> viewMessage(String uid)
     {

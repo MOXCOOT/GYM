@@ -3,6 +3,7 @@ package cn.njust.dao;
 import cn.njust.entity.Order;
 import cn.njust.entity.User;
 import cn.njust.utils.DBUtil;
+import com.sun.org.apache.xpath.internal.operations.Or;
 
 import java.sql.Date;
 import java.sql.SQLException;
@@ -19,38 +20,47 @@ public class OrderDao extends BaseDao{
      *   无需输入，直接查看所有订单信息
      */
     public static List<Order> findAllOrder(){
-        String sql = "select * from orde";
+//        String sql = "select * from orde";
         List<Map<String, Object>> list = null;
+        Map<String,Object> wheremap=new HashMap<>();
         List<Order> orders=new ArrayList<>();
         try {
-            list = DBUtil.query(sql);
-            for(Map<String, Object> i:list)
-            {
-                Order j=new Order();
-                j.setOid(i.get("order_id").toString());
-                j.setUid(i.get("user_id").toString());
-                j.setRid(i.get("rent_id").toString());
-                j.setReturnTime(Timestamp.valueOf(i.get("return_time").toString()));
-                j.setOrderTime(Timestamp.valueOf(i.get("order_time").toString()));
-                j.setSum(Integer.parseInt(i.get("sum").toString()));
-                j.setState(Integer.parseInt(i.get("order_state").toString()));
-            }
-        } catch (SQLException e) {
+            list = DBUtil.query("orde",wheremap);
+        } catch (Exception e) {
             e.printStackTrace();
-
+        }
+        System.out.println("标记");
+        System.out.println(list.size());
+        for(Map<String, Object> i:list)
+        {
+            Order j=new Order();
+            j.setOid(i.get("order_id").toString());
+            j.setUid(i.get("user_id").toString());
+            j.setRid(i.get("rent_id").toString());
+            j.setReturnTime(Timestamp.valueOf(i.get("return_time").toString()));
+            j.setOrderTime(Timestamp.valueOf(i.get("order_time").toString()));
+            j.setSum(Integer.parseInt(i.get("order_sum").toString()));
+            j.setState(Integer.parseInt(i.get("order_state").toString()));
+            j.setRtype(i.get("rent_type").toString());
+            orders.add(j);
         }
 
         //System.out.println(list.get(0).get("order_state"));
         return orders;//返回订单信息
     }
+//    public static void main(String[] args) {
+//        System.out.println("askojdhfilouahrslf");
+//        System.out.println(OrderDao.findAllOrderByUserid("d"));
+//        OrderDao.findAllOrderByUserid("d");
+//   }
 
     /**
      *   输入user_id,根据user_id查看每个用户所有订单的信息
      */
-    public static List<Order> findAllOrderByUserid(User user) {
+    public static List<Order> findAllOrderByUserid(String uid) {
         String sql = "select * from orde where user_id=?";
         List<Map<String, Object>> list = null;
-        Object[] param={user.getId()};
+        Object[] param={uid};
         List<Order> orders = new ArrayList<>();
         try {
             list = DBUtil.executeQuery(sql,param);
@@ -64,10 +74,13 @@ public class OrderDao extends BaseDao{
             j.setRid(i.get("rent_id").toString());
             j.setReturnTime(Timestamp.valueOf(i.get("return_time").toString()));
             j.setOrderTime(Timestamp.valueOf(i.get("order_time").toString()));
-            j.setSum(Integer.parseInt(i.get("sum").toString()));
+            j.setSum(Integer.parseInt(i.get("order_sum").toString()));
             j.setState(Integer.parseInt(i.get("order_state").toString()));
+            j.setRtype(i.get("rent_type").toString());
+            orders.add(j);
         }
-        return orders;}
+        return orders;
+    }
 
         /**
          *   输入order,根据order_id查看每个用户所有订单的信息
@@ -88,8 +101,9 @@ public class OrderDao extends BaseDao{
                 e.setRid(rs.getString("rent_id"));
                 e.setOrderTime(Timestamp.valueOf(rs.getString("order_time")));
                 e.setReturnTime(Timestamp.valueOf(rs.getString("return_time")));
-                e.setSum(rs.getInt("sum"));
+                e.setSum(rs.getInt("order_sum"));
                 e.setState(rs.getInt("order_state"));
+                e.setRtype(rs.getString("rent_type"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -145,6 +159,7 @@ public class OrderDao extends BaseDao{
             map.put("order_state",order.getState() );
             map.put("return_time",order.getReturnTime());
             map.put("order_sum",order.getSum());
+            map.put("rent_type",order.getRtype());
         try {
             int count = DBUtil.insert("orde", map);
         } catch (SQLException e) {

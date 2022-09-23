@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 
 public class Order {
     private String oid;//订单id
+    private String rtype;
     private String rid;//器材id
     private String uid;//用户id
     private Timestamp orderTime;
@@ -65,5 +66,13 @@ public class Order {
 
     public void setReturnTime(Timestamp returnTime) {
         this.returnTime = returnTime;
+    }
+
+    public String getRtype() {
+        return rtype;
+    }
+
+    public void setRtype(String rtype) {
+        this.rtype = rtype;
     }
 }

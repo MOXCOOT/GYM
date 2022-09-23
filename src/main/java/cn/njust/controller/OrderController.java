@@ -3,9 +3,9 @@ package cn.njust.controller;
 import cn.njust.Service.Customer.ViewService;
 import cn.njust.entity.User;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet(name = "OrderController", value = "/OrderController")
@@ -18,6 +18,7 @@ public class OrderController extends HttpServlet {
 //        request.getRequestDispatcher("../page/client_order.jsp").forward(request, response);V
 
         ViewService vs = new ViewService();
+        System.out.println(vs.viewOrder(cus.getId()));
         request.setAttribute("orderList",vs.viewOrder(cus.getId()));
         request.getRequestDispatcher("../page/client/order/client_order.jsp").forward(request, response);
 

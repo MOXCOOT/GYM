@@ -4,9 +4,9 @@ import cn.njust.Service.Customer.RegisterService;
 import cn.njust.Service.Login.LoginService;
 
 import cn.njust.entity.User;
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -35,6 +35,7 @@ public class LoginController extends HttpServlet {
             request.getSession().setAttribute("message", Rg_result);
             request.getRequestDispatcher("../page/main.jsp").forward(request, response);
             System.out.println(Rg_result);
+
             //返回 3 代表手机号错误或已被注册
             //返回 2 代表有空空值
             //返回 1 代表两次密码不一致

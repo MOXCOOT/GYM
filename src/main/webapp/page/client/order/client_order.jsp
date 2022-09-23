@@ -2,22 +2,17 @@
 <%@ page import="cn.njust.entity.Order" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--<%@ page import=""@%>--%>
 <html lang="en">
 <head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>体育馆管理系统 | 我的首页</title>
-    <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="../css/all.min.css">
-    <!-- DataTables -->
     <link rel="stylesheet" href="../css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="../css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="../css/buttons.bootstrap4.min.css">
-    <!-- Theme style -->
     <link rel="stylesheet" href="../css/adminlte.min.css">
 </head>
 <body class="hold-transition sidebar-mini">
@@ -27,7 +22,10 @@
         <!-- 头部左侧按钮 -->
         <ul class="navbar-nav">
             <li class="nav-item d-none d-sm-inline-block">
-                <a href=" login.jsp" class="nav-link">退出登录</a>
+                <a href="../page/welcome.jsp" class="nav-link">返回首页</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="../page/login.jsp" class="nav-link">退出登录</a>
             </li>
         </ul>
     </nav>
@@ -35,7 +33,7 @@
     <!-- 侧边栏容器 -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- 侧边栏logo -->
-        <a href=" index3.html" class="brand-link">
+        <a href="#" class="brand-link">
             <img src=" ../img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
             <span class="brand-text font-weight-light">体育馆管理系统</span>
         </a>
@@ -45,7 +43,6 @@
 
         %>
         <div class="sidebar">
-            <!-- Sidebar user (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
                     <img src="../img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
@@ -72,7 +69,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="http://localhost:8080/GYM_war_exploded/page/client/person/message.jsp" class="nav-link">
+                                <a href="../page/client/person/message.jsp" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>收信箱</p>
                                 </a>
@@ -80,7 +77,7 @@
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../person/modification.jsp" class="nav-link">
+                                <a href="../page/client/person/modification.jsp" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>修改信息</p>
                                 </a>
@@ -96,13 +93,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../shop/equipment.jsp" class="nav-link">
+                                <a href="../page/client/shop/equipment.jsp" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>租借器材</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="../shop/venue.jsp" class="nav-link">
+                                <a href="../page/client/shop/venue.jsp" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>租借场地</p>
                                 </a>
@@ -118,7 +115,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="client_order.jsp" class="nav-link">
+                                <a href="#" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>所有订单</p>
                                 </a>
@@ -167,6 +164,8 @@
                                     <!-- 此处插入c标签 -->
                                     <%
                                         List<Order> listOrder=(List<Order>) request.getAttribute("orderList");
+//                                        System.out.println("fedsaf");
+                                        System.out.println(listOrder);
                                         if(listOrder!=null)
                                         {
                                             for(Order i:listOrder)
@@ -175,7 +174,7 @@
                                     %>
                                     <tr>
                                         <td><%=i.getOid()%></td>
-                                        <td><%=i.getRid()%></td>
+                                        <td><%=i.getRtype()%></td>
                                         <td><%=i.getOrderTime()%></td>
                                         <td><%=i.getReturnTime()%></td>
                                         <td><%=i.getSum()%></td>
@@ -184,129 +183,7 @@
                                             }
                                         }
                                     %>
-                                    <tr>
-                                        <td>10086</td>
-                                        <td>羽毛球拍一副</td>
-                                        <td>2022.09.13 16.00</td>
-                                        <td>2022.09.13 17.00</td>
-                                        <td>20</td>
-                                    </tr>
 
-                                    <tr>
-                                        <td>10086</td>
-                                        <td>羽毛球拍一副</td>
-                                        <td>2022.09.13 16.00</td>
-                                        <td>2022.09.13 17.00</td>
-                                        <td>20</td>
-                                    </tr><tr>
-                                        <td>10086</td>
-                                        <td>羽毛球拍一副</td>
-                                        <td>2022.09.13 16.00</td>
-                                        <td>2022.09.13 17.00</td>
-                                        <td>20</td>
-                                    </tr><tr>
-                                        <td>10086</td>
-                                        <td>羽毛球拍一副</td>
-                                        <td>2022.09.13 16.00</td>
-                                        <td>2022.09.13 17.00</td>
-                                        <td>20</td>
-                                    </tr><tr>
-                                        <td>10086</td>
-                                        <td>羽毛球拍一副</td>
-                                        <td>2022.09.13 16.00</td>
-                                        <td>2022.09.13 17.00</td>
-                                        <td>20</td>
-                                    </tr><tr>
-                                        <td>10086</td>
-                                        <td>羽毛球拍一副</td>
-                                        <td>2022.09.13 16.00</td>
-                                        <td>2022.09.13 17.00</td>
-                                        <td>20</td>
-                                    </tr><tr>
-                                        <td>10086</td>
-                                        <td>羽毛球拍一副</td>
-                                        <td>2022.09.13 16.00</td>
-                                        <td>2022.09.13 17.00</td>
-                                        <td>20</td>
-                                    </tr><tr>
-                                        <td>10086</td>
-                                        <td>羽毛球拍一副</td>
-                                        <td>2022.09.13 16.00</td>
-                                        <td>2022.09.13 17.00</td>
-                                        <td>20</td>
-                                    </tr><tr>
-                                        <td>10086</td>
-                                        <td>羽毛球拍一副</td>
-                                        <td>2022.09.13 16.00</td>
-                                        <td>2022.09.13 17.00</td>
-                                        <td>20</td>
-                                    </tr><tr>
-                                        <td>10086</td>
-                                        <td>羽毛球拍一副</td>
-                                        <td>2022.09.13 16.00</td>
-                                        <td>2022.09.13 17.00</td>
-                                        <td>20</td>
-                                    </tr><tr>
-                                        <td>10086</td>
-                                        <td>羽毛球拍一副</td>
-                                        <td>2022.09.13 16.00</td>
-                                        <td>2022.09.13 17.00</td>
-                                        <td>20</td>
-                                    </tr><tr>
-                                        <td>10086</td>
-                                        <td>羽毛球拍一副</td>
-                                        <td>2022.09.13 16.00</td>
-                                        <td>2022.09.13 17.00</td>
-                                        <td>20</td>
-                                    </tr><tr>
-                                        <td>10086</td>
-                                        <td>羽毛球拍一副</td>
-                                        <td>2022.09.13 16.00</td>
-                                        <td>2022.09.13 17.00</td>
-                                        <td>20</td>
-                                    </tr><tr>
-                                        <td>10086</td>
-                                        <td>羽毛球拍一副</td>
-                                        <td>2022.09.13 16.00</td>
-                                        <td>2022.09.13 17.00</td>
-                                        <td>20</td>
-                                    </tr><tr>
-                                        <td>10086</td>
-                                        <td>羽毛球拍一副</td>
-                                        <td>2022.09.13 16.00</td>
-                                        <td>2022.09.13 17.00</td>
-                                        <td>20</td>
-                                    </tr><tr>
-                                        <td>10086</td>
-                                        <td>羽毛球拍一副</td>
-                                        <td>2022.09.13 16.00</td>
-                                        <td>2022.09.13 17.00</td>
-                                        <td>20</td>
-                                    </tr><tr>
-                                        <td>10086</td>
-                                        <td>羽毛球拍一副</td>
-                                        <td>2022.09.13 16.00</td>
-                                        <td>2022.09.13 17.00</td>
-                                        <td>20</td>
-                                    </tr><tr>
-                                        <td>10086</td>
-                                        <td>羽毛球拍一副</td>
-                                        <td>2022.09.13 16.00</td>
-                                        <td>2022.09.13 17.00</td>
-                                        <td>20</td>
-                                    </tr><tr>
-                                        <td>10086</td>
-                                        <td>羽毛球拍一副</td>
-                                        <td>2022.09.13 16.00</td>
-                                        <td>2022.09.13 17.00</td>
-                                        <td>20</td>
-                                    </tr><tr>
-                                        <td>10086</td>
-                                        <td>羽毛球拍一副</td>
-                                        <td>2022.09.13 16.00</td>
-                                        <td>2022.09.13 17.00</td>
-                                        <td>20</td>
-                                    </tr>
 
                                     </tbody>
                                     <tfoot>
@@ -322,13 +199,9 @@
                             </div>
                         </div>
                     </div>
-                    <!-- /.col -->
                 </div>
-                <!-- /.row -->
             </div>
-            <!-- /.container-fluid -->
         </section>
-        <!-- /.content -->
     </div>
     <!-- /.主题内容底部-->
     <footer class="main-footer">
@@ -338,12 +211,9 @@
         <%--        <strong>Copyright &copy; 2022.</strong> All rights reserved.--%>
     </footer>
 </div>
-<!-- ./wrapper -->
 
 <script src="../js/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
 <script src="../js/bootstrap.bundle.min.js"></script>
-<!-- DataTables  & Plugins -->
 <script src=" ../js/jquery.dataTables.min.js"></script>
 <script src=" ../js/dataTables.bootstrap4.min.js"></script>
 <script src=" ../js/dataTables.responsive.min.js"></script>
@@ -356,9 +226,7 @@
 <script src=" ../js/buttons.html5.min.js"></script>
 <script src=" ../js/buttons.print.min.js"></script>
 <script src=" ../js/buttons.colVis.min.js"></script>
-<!-- AdminLTE App -->
 <script src=" ../js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
 <script src=" ../js/demo.js"></script>
 <script>
     $(function () {
