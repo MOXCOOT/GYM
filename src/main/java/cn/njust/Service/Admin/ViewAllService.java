@@ -2,7 +2,7 @@ package cn.njust.Service.Admin;
 
 import cn.njust.entity.*;
 
-public class ViewService {
+public class ViewAllService {
     public Equipment[] viewEquipment(){
         return null;
     }
@@ -11,6 +11,7 @@ public class ViewService {
     }
     public Order[] viewOrder(String aid)
     {
+
         return null;
     }
     public Message[] viewMessage(String aid)

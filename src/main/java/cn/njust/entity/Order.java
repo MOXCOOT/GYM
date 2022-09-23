@@ -3,9 +3,9 @@ package cn.njust.entity;
 import java.sql.Timestamp;
 
 public class Order {
-    private String oid;
-    private String rid;
-    private String uid;
+    private String oid;//订单id
+    private String rid;//器材id
+    private String uid;//用户id
     private Timestamp orderTime;
     private Timestamp returnTime;
     private int sum;

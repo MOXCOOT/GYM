@@ -4,9 +4,9 @@ import cn.njust.Service.Customer.RegisterService;
 import cn.njust.Service.Login.LoginService;
 
 import cn.njust.entity.User;
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 

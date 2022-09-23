@@ -1,4 +1,6 @@
 <%@ page import="cn.njust.entity.User" %>
+<%@ page import="cn.njust.entity.Order" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--<%@ page import=""@%>--%>
 <html lang="en">
@@ -163,9 +165,25 @@
                                     <tbody>
 
                                     <!-- 此处插入c标签 -->
+                                    <%
+                                        List<Order> listOrder=(List<Order>) request.getAttribute("orderList");
+                                        if(listOrder!=null)
+                                        {
+                                            for(Order i:listOrder)
+                                            {
 
-
-
+                                    %>
+                                    <tr>
+                                        <td><%=i.getOid()%></td>
+                                        <td><%=i.getRid()%></td>
+                                        <td><%=i.getOrderTime()%></td>
+                                        <td><%=i.getReturnTime()%></td>
+                                        <td><%=i.getSum()%></td>
+                                    </tr>
+                                    <%
+                                            }
+                                        }
+                                    %>
                                     <tr>
                                         <td>10086</td>
                                         <td>羽毛球拍一副</td>
@@ -173,6 +191,7 @@
                                         <td>2022.09.13 17.00</td>
                                         <td>20</td>
                                     </tr>
+
                                     <tr>
                                         <td>10086</td>
                                         <td>羽毛球拍一副</td>
