@@ -93,7 +93,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="../page/client/shop/venue.jsp" class="nav-link">
+                                <a href="../servlet/VenueController" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>租借场地</p>
                                 </a>

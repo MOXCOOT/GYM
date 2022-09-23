@@ -35,7 +35,6 @@ public class EquipmentDao extends BaseDao {
             j.setNumber(Integer.parseInt(i.get("equipment_number").toString()));
             j.setState(Integer.parseInt(i.get("equipment_state").toString()));
             equipments.add(j);
-
         }
         //System.out.println(list.get(0).get("equipment_state"));
         return equipments;//返回器材信息

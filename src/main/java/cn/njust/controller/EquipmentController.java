@@ -17,8 +17,8 @@ public class EquipmentController extends HttpServlet {
 
         ViewService vs = new ViewService();
         request.setAttribute("equipList",vs.viewEquipment());
-        System.out.println("12313213");
-        System.out.println(vs.viewEquipment());
+//        System.out.println("12313213");
+//        System.out.println(vs.viewEquipment());
         request.getRequestDispatcher("../page/client/shop/equipment.jsp").forward(request, response);
 
     }

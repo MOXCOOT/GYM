@@ -10,7 +10,7 @@ public class Order {
     private Timestamp orderTime;
     private Timestamp returnTime;
     private int sum;
-    private int state;
+    private String state;
 
     public String getOid() {
         return oid;
@@ -44,11 +44,11 @@ public class Order {
         this.sum = sum;
     }
 
-    public int getState() {
+    public String getState() {
         return state;
     }
 
-    public void setState(int state) {
+    public void setState(String state) {
         this.state = state;
     }
 

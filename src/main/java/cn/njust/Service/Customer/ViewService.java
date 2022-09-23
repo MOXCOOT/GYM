@@ -12,7 +12,7 @@ public class ViewService {
     }
     public List<Venue> viewVenue()
     {
-        return null;
+        return VenueDao.findAllVenue();
     }
     public List<Order> viewOrder(String uid)
     {

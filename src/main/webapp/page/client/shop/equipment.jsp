@@ -99,7 +99,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="../page/client/shop/venue.jsp" class="nav-link">
+                                <a href="../servlet/VenueController" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>租借场地</p>
                                 </a>
@@ -179,10 +179,15 @@
                                                 <div class="modal-content">
                                                     <div class="modal-body">
                                                         <form action="#">
-                                                            <h2 class="from_title">确认订单</h2>
+                                                            <h2 class="from_title" >确认订单</h2>
                                                             <h3>器材编号： <%=i.getId()%></h3>
                                                             <h3>器材名称： <%=i.getName()%></h3>
-                                                            <h3>租赁数量： <input type="text" placeholder="1" class="input"></h3>
+                                                            <h3>租赁时长： <select>
+                                                                <option>1</option>
+                                                                <option>2</option>
+                                                                <option>3</option>
+                                                                <option>4</option>
+                                                            </select></h3>
                                                         </form>
                                                     </div>
                                                     <div class="modal-footer">
@@ -203,36 +208,34 @@
 
 
 
-                                    <tr>
-                                        <td>12138</td>
-                                        <td>羽毛球拍一副</td>
-                                        <td>20元/小时</td>
-                                        <td>100</td>
-                                        <td><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">租赁</button></td>
-                                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-body">
-                                                        <form action="#">
-                                                            <h2 class="from_title">确认订单</h2>
-                                                            <h3>器材编号： 12138</h3>
-                                                            <h3>器材名称： 羽毛球拍一副</h3>
-                                                            <h3>租赁数量： <input type="text" placeholder="1" class="input"></h3>
-                                                        </form>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">取消
-                                                        </button>
-                                                        <button type="button" class="btn btn-primary">
-                                                            确定
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </tr>
-
-
+<%--                                    <tr>--%>
+<%--                                        <td>12138</td>--%>
+<%--                                        <td>羽毛球拍一副</td>--%>
+<%--                                        <td>20元/小时</td>--%>
+<%--                                        <td>100</td>--%>
+<%--                                        <td><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">租赁</button></td>--%>
+<%--                                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">--%>
+<%--                                            <div class="modal-dialog">--%>
+<%--                                                <div class="modal-content">--%>
+<%--                                                    <div class="modal-body">--%>
+<%--                                                        <form action="#">--%>
+<%--                                                            <h2 class="from_title">确认订单</h2>--%>
+<%--                                                            <h3>器材编号： 12138</h3>--%>
+<%--                                                            <h3>器材名称： 羽毛球拍一副</h3>--%>
+<%--                                                            <h3>租赁数量： <input type="text" placeholder="1" class="input"></h3>--%>
+<%--                                                        </form>--%>
+<%--                                                    </div>--%>
+<%--                                                    <div class="modal-footer">--%>
+<%--                                                        <button type="button" class="btn btn-default" data-dismiss="modal">取消--%>
+<%--                                                        </button>--%>
+<%--                                                        <button type="button" class="btn btn-primary">--%>
+<%--                                                            确定--%>
+<%--                                                        </button>--%>
+<%--                                                    </div>--%>
+<%--                                                </div>--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                    </tr>--%>
                                     </tbody>
                                     <tfoot>
                                     <tr>

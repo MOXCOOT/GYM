@@ -99,7 +99,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="../page/client/shop/venue.jsp" class="nav-link">
+                                <a href="../servlet/VenueController" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>租借场地</p>
                                 </a>
@@ -157,6 +157,7 @@
                                         <th>起始时间</th>
                                         <th>归还时间</th>
                                         <th>金额（元）</th>
+                                        <th>订单状态</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -170,7 +171,6 @@
                                         {
                                             for(Order i:listOrder)
                                             {
-
                                     %>
                                     <tr>
                                         <td><%=i.getOid()%></td>
@@ -178,6 +178,7 @@
                                         <td><%=i.getOrderTime()%></td>
                                         <td><%=i.getReturnTime()%></td>
                                         <td><%=i.getSum()%></td>
+                                        <td><%=i.getState()%></td>
                                     </tr>
                                     <%
                                             }
@@ -193,6 +194,7 @@
                                         <th>起始时间</th>
                                         <th>归还时间</th>
                                         <th>金额（元）</th>
+                                        <th>订单状态</th>
                                     </tr>
                                     </tfoot>
                                 </table>

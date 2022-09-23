@@ -31,6 +31,7 @@ public class VenueDao extends BaseDao{
             j.setName(i.get("venue_name").toString());
             j.setPrice(Integer.parseInt(i.get("venue_price").toString()));
             j.setState(Integer.parseInt(i.get("venue_state").toString()));
+            venues.add(j);
 
         }
         //System.out.println(list.get(0).get("venue_state"));

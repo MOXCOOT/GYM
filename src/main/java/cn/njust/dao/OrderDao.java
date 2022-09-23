@@ -40,7 +40,7 @@ public class OrderDao extends BaseDao{
             j.setReturnTime(Timestamp.valueOf(i.get("return_time").toString()));
             j.setOrderTime(Timestamp.valueOf(i.get("order_time").toString()));
             j.setSum(Integer.parseInt(i.get("order_sum").toString()));
-            j.setState(Integer.parseInt(i.get("order_state").toString()));
+            j.setState(i.get("order_state").toString());
             j.setRtype(i.get("rent_type").toString());
             orders.add(j);
         }
@@ -75,7 +75,7 @@ public class OrderDao extends BaseDao{
             j.setReturnTime(Timestamp.valueOf(i.get("return_time").toString()));
             j.setOrderTime(Timestamp.valueOf(i.get("order_time").toString()));
             j.setSum(Integer.parseInt(i.get("order_sum").toString()));
-            j.setState(Integer.parseInt(i.get("order_state").toString()));
+            j.setState(i.get("order_state").toString());
             j.setRtype(i.get("rent_type").toString());
             orders.add(j);
         }
@@ -102,7 +102,7 @@ public class OrderDao extends BaseDao{
                 e.setOrderTime(Timestamp.valueOf(rs.getString("order_time")));
                 e.setReturnTime(Timestamp.valueOf(rs.getString("return_time")));
                 e.setSum(rs.getInt("order_sum"));
-                e.setState(rs.getInt("order_state"));
+                e.setState(rs.getString("order_state"));
                 e.setRtype(rs.getString("rent_type"));
             }
         } catch (SQLException e) {
