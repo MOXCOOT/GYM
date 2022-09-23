@@ -61,6 +61,10 @@ public class LoginController extends HttpServlet {
                 //正确登录，转到个人主页
                 request.getRequestDispatcher("../page/client_order.jsp").forward(request, response);
             }
+            else {
+                request.setAttribute("message","密码错误！请重新登录");
+                request.getRequestDispatcher("../page/client_order.jsp").forward(request, response);
+            };
         }
 
 
