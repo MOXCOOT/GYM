@@ -4,9 +4,9 @@ import cn.njust.Service.Customer.RegisterService;
 import cn.njust.Service.Login.LoginService;
 
 import cn.njust.entity.User;
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -45,6 +45,7 @@ public class LoginController extends HttpServlet {
             //返回 1 代表两次密码不一致
             //返回 0 代表注册成功
             //检验两次密码是否一致
+            //测试
         }
 
         if(login!=null)

@@ -13,13 +13,6 @@
         <element id="directory" name="classes">
           <element id="module-output" name="GYM_manage" />
         </element>
-        <element id="directory" name="lib">
-          <element id="library" level="project" name="mchange-commons-java-0.2.11" />
-          <element id="library" level="project" name="mysql-connector-java" />
-          <element id="library" level="project" name="mysql-connector-java-8.0.28" />
-          <element id="library" level="project" name="servlet-api" />
-          <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/c3p0-0.9.5.2.jar" />
-        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/GYM_manage-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
