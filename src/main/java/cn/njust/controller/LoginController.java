@@ -4,9 +4,9 @@ import cn.njust.Service.Customer.RegisterService;
 import cn.njust.Service.Login.LoginService;
 
 import cn.njust.entity.User;
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -32,8 +32,11 @@ public class LoginController extends HttpServlet {
             System.out.println("sub");
             RegisterService rg = new RegisterService();
             String Rg_result = rg.registerNew(name_sub,phone,pwd1,pwd2);
-            request.setAttribute("message",Rg_result);
-            response.sendRedirect("../page/main.");
+            //request.setAttribute("message",Rg_result);
+            //response.sendRedirect("../page/main.jsp");
+            request.getSession().setAttribute("message", Rg_result);
+            request.getRequestDispatcher("../page/main.jsp").forward(request, response);
+            System.out.println(Rg_result);
 //            if(Rg_result==0)
 //                    response.sendRedirect("/GYM_manage_war_exploded/page/login.jsp?error=yes0");
 //        else if (Rg_result==1)
@@ -62,8 +65,8 @@ public class LoginController extends HttpServlet {
                 request.getRequestDispatcher("../page/client_order.jsp").forward(request, response);
             }
             else {
-                request.setAttribute("message","密码错误！请重新登录");
-                request.getRequestDispatcher("../page/client_order.jsp").forward(request, response);
+                request.getSession().setAttribute("message","登录错误！请重新登录");
+                request.getRequestDispatcher("../page/main.jsp").forward(request, response);
             };
         }
 

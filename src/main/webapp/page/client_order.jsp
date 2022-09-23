@@ -50,7 +50,6 @@
                 <div class="info">
                     <%
                         User u=(User) request.getSession().getAttribute("user");
-                        System.out.println(u.getName());
                     %>
 
                     <a href="#" class="d-block"><%=u.getName()%></a>
