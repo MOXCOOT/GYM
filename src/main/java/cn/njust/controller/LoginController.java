@@ -4,9 +4,9 @@ import cn.njust.Service.Customer.RegisterService;
 import cn.njust.Service.Login.LoginService;
 
 import cn.njust.entity.User;
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -32,19 +32,9 @@ public class LoginController extends HttpServlet {
             System.out.println("sub");
             RegisterService rg = new RegisterService();
             String Rg_result = rg.registerNew(name_sub,phone,pwd1,pwd2);
-            //request.setAttribute("message",Rg_result);
-            //response.sendRedirect("../page/main.jsp");
             request.getSession().setAttribute("message", Rg_result);
             request.getRequestDispatcher("../page/main.jsp").forward(request, response);
             System.out.println(Rg_result);
-//            if(Rg_result==0)
-//                    response.sendRedirect("/GYM_manage_war_exploded/page/login.jsp?error=yes0");
-//        else if (Rg_result==1)
-//                response.sendRedirect("/GYM_manage_war_exploded/page/login.jsp?error=yes1");
-//        else if(Rg_result==2)
-//                response.sendRedirect("/GYM_manage_war_exploded/page/login.jsp?error=yes2");
-//            else if(Rg_result==3)
-//                response.sendRedirect("/GYM_manage_war_exploded/page/login.jsp?error=yes3");
             //返回 3 代表手机号错误或已被注册
             //返回 2 代表有空空值
             //返回 1 代表两次密码不一致
