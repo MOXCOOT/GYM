@@ -6,11 +6,11 @@ import cn.njust.entity.*;
 import java.util.Random;
 
 public class RegisterService {
-    public int registerNew(String name,String number,String password1,String password2)
+    public String registerNew(String name,String number,String password1,String password2)
     {
-        if(name.equals("")||number.length()==0||password1.length()==0||password2.length()==0)return 2;
+        if(name.equals("")||number.length()==0||password1.length()==0||password2.length()==0)return "输入不能为空";
 //        if(number==null) return 2;
-        else if(number.length()!=11) return 3;
+        else if(number.length()!=11) return "手机号错误或已被注册";
         UserDao dao=new UserDao();
         User newid=new User();
         System.out.println(name);
@@ -23,7 +23,7 @@ public class RegisterService {
         //返回 0 代表注册成功
         //检验两次密码是否一致
         if(!password1.equals(password2))
-            return 1;
+            return "代表两次密码不一致";
         String uid;
         do {
             //随机生成五位数字作为用户ID
@@ -47,6 +47,6 @@ public class RegisterService {
         UserDao.insertSingleUser(newid);
         System.out.println("服务端插入成功");
         //将数据插入数据库
-        return 0;
+        return "注册成功";
     }
 }
