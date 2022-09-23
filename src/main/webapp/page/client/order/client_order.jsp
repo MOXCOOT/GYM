@@ -110,7 +110,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="http://localhost:8080/GYM_war_exploded/page/client/venue/client_venue.jsp" class="nav-link">
+                                <a href="client_order.jsp" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>所有订单</p>
                                 </a>

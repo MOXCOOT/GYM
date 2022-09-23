@@ -24,7 +24,7 @@
         <!-- 头部左侧按钮 -->
         <ul class="navbar-nav">
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="login.jsp" class="nav-link">退出登录</a>
+                <a href="../page/login.jsp" class="nav-link">退出登录</a>
             </li>
         </ul>
     </nav>
@@ -107,7 +107,7 @@
                         </ul>
                     </li>
                     <li class="nav-item menu-open">
-                        <a href="#" class="nav-link active">
+                        <a href="#" class="nav-link">
                             <p>
                                 订单
                                 <i class="fas fa-angle-left right"></i>
@@ -115,7 +115,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="client_order.jsp" class="nav-link">
+                                <a href="../page/client/order/client_order.jsp" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>所有订单</p>
                                 </a>

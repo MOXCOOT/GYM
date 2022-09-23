@@ -9,10 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5de2a841-ecdd-45aa-906e-37c66a557529" name="变更" comment="更新注册逻辑">
+    <list default="true" id="5de2a841-ecdd-45aa-906e-37c66a557529" name="变更" comment="登录与注册功能改变">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Customer/ViewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Customer/ViewService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client/order/client_order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client/order/client_order.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client_order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client_order.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +45,6 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHome" value="Use Maven wrapper" />
-        <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -56,15 +56,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/apache-tomcat-8.5.51/lib/servlet-api.jar",
-    "project.structure.last.edited": "库",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="project.structure.last.edited" value="Facet" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.36204576" />
+  </component>
   <component name="RunManager" selected="Tomcat 服务器.Tomcat 8.5.51">
     <configuration name="MessageDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.njust.dao.MessageDao" />
@@ -92,7 +89,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 8.5.51" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.51" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="Tomcat 8.5.51" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.16" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
         <artifact name="GYM_manage:war exploded">
           <settings>
@@ -326,7 +323,7 @@
       <workItem from="1663819409976" duration="50000" />
       <workItem from="1663840315358" duration="3695000" />
       <workItem from="1663844753470" duration="2205000" />
-      <workItem from="1663919951746" duration="1040000" />
+      <workItem from="1663919951746" duration="332000" />
     </task>
     <task id="LOCAL-00001" summary="登录功能改变">
       <created>1663858811786</created>
@@ -363,12 +360,12 @@
       <option name="project" value="LOCAL" />
       <updated>1663920076927</updated>
     </task>
-    <task id="LOCAL-00006" summary="更新注册逻辑">
-      <created>1663920301451</created>
+    <task id="LOCAL-00006" summary="登录与注册功能改变">
+      <created>1663921759807</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1663920301451</updated>
+      <updated>1663921759807</updated>
     </task>
     <option name="localTasksCounter" value="7" />
     <servers />
@@ -386,13 +383,14 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="登录功能改变" />
     <MESSAGE value="注册功能改变" />
     <MESSAGE value="Test" />
-    <MESSAGE value="更新注册逻辑" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新注册逻辑" />
+    <MESSAGE value="登录与注册功能改变" />
+    <option name="LAST_COMMIT_MESSAGE" value="登录与注册功能改变" />
   </component>
 </project>
