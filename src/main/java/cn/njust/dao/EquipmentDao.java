@@ -34,12 +34,16 @@ public class EquipmentDao extends BaseDao {
             j.setPrice(Integer.parseInt(i.get("equipment_price").toString()));
             j.setNumber(Integer.parseInt(i.get("equipment_number").toString()));
             j.setState(Integer.parseInt(i.get("equipment_state").toString()));
+            equipments.add(j);
 
         }
         //System.out.println(list.get(0).get("equipment_state"));
         return equipments;//返回器材信息
     }
 
+//    public static void main(String[] args) {
+//        System.out.println(EquipmentDao.findAllEquipment());
+//    }
 
 
    /* public static void main(String[] args)

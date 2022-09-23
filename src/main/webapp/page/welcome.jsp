@@ -87,7 +87,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../page/client/shop/equipment.jsp" class="nav-link">
+                                <a href="../servlet/EquipmentController" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>租借器材</p>
                                 </a>
