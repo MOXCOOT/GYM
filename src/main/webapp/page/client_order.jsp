@@ -48,11 +48,11 @@
                     <img src="../img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-<%--                    <%--%>
-<%--                        User u=(User) request.getSession().getAttribute("user");--%>
-<%--                    %>--%>
+                    <%
+                        User u=(User) request.getSession().getAttribute("user");
+                    %>
 
-<%--                    <a href="#" class="d-block"><%=u.getName()%></a>--%>
+                    <a href="#" class="d-block"><%=u.getName()%></a>
                 </div>
             </div>
 

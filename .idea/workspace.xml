@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5de2a841-ecdd-45aa-906e-37c66a557529" name="变更" comment="登录与注册功能改变">
+    <list default="true" id="5de2a841-ecdd-45aa-906e-37c66a557529" name="变更" comment="订单页面功能改变">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/controller/LoginController.java" afterDir="false" />
@@ -204,7 +204,7 @@
       <workItem from="1663844753470" duration="2205000" />
       <workItem from="1663919951746" duration="332000" />
       <workItem from="1663923896437" duration="283000" />
-      <workItem from="1663924281218" duration="3008000" />
+      <workItem from="1663924281218" duration="3348000" />
     </task>
     <task id="LOCAL-00001" summary="登录功能改变">
       <created>1663858811786</created>
@@ -255,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663924028693</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="订单页面功能改变">
+      <created>1663932621765</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1663932621765</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,6 +286,7 @@
     <MESSAGE value="注册功能改变" />
     <MESSAGE value="Test" />
     <MESSAGE value="登录与注册功能改变" />
-    <option name="LAST_COMMIT_MESSAGE" value="登录与注册功能改变" />
+    <MESSAGE value="订单页面功能改变" />
+    <option name="LAST_COMMIT_MESSAGE" value="订单页面功能改变" />
   </component>
 </project>
