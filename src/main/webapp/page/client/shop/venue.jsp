@@ -176,8 +176,9 @@
                                                     <div id="test" class="modal-body">
                                                         <form action="../servlet/VenueController">
                                                             <h2 class="from_title" >确认订单</h2>
-                                                            <h3>场地编号： <%=i.getId()%></h3>
-                                                            <h3>场地名称： <%=i.getName()%></h3>
+                                                            <h3>场地编号： <input  name="venue_id" type="text" readonly unselectable="on" value="<%=i.getId()%>" style= "background-color:transparent;border:0;width: 50px";></h3>
+<%--                                                            <h3>场地编号： <%=i.getId()%></h3>--%>
+                                                            <h3>场地名称： <input  name="venue_name" type="text" readonly unselectable="on" value="<%=i.getName()%>" style= "background-color:transparent;border:0;width: 120px";></h3>
                                                             <h3>租赁时长： <select name="hours">
                                                                 <option>1</option>
                                                                 <option>2</option>
@@ -188,12 +189,12 @@
                                                                 <button type="button" class="btn btn-default" data-dismiss="modal">取消
                                                                 </button>
                                                                 <script type="text/javascript">
-                                                                    function demo()
-                                                                    {
-                                                                        session.setAttribute("vId","SFSDA");
-                                                                    }
+                                                                    // function demo()
+                                                                    // {
+                                                                    //     session.setAttribute("vId","SFSDA");
+                                                                    // }
                                                                 </script>
-                                                                <input name="queding" type="submit" class="btn btn-primary" value="确定" onclick="demo()">
+                                                                <input name="123" type="submit" class="btn btn-primary" value="确定"  onclick="demo()">
                                                             </div>
                                                         </form>
                                                     </div>

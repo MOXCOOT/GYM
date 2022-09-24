@@ -12,13 +12,14 @@ public class VenueController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        Object queding = request.getParameter("queding");
-
-      //  System.out.println("访问VenueController"+queding);
-
+        Object queding = request.getParameter("123");
         if(queding!=null)
         {
-            System.out.println("hello"+request.getSession().getAttribute("vId"));
+            String venue_id = request.getParameter("venue_id");
+            String venue_name = request.getParameter("venue_name");
+            String hours =  request.getParameter("hours");
+            System.out.println(venue_id+" "+ venue_name+" "+ hours);
+
         }
 
 

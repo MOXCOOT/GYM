@@ -1,10 +1,12 @@
 package cn.njust.dao;
 
+import cn.njust.entity.Order;
 import cn.njust.entity.User;
 import cn.njust.entity.Venue;
 import cn.njust.utils.DBUtil;
 
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -65,6 +67,24 @@ public class VenueDao extends BaseDao{
             e.printStackTrace();
         }
     }
+    public static int findPriceByType(String type)
+    {
+        String sql = "select venue_price from venue where venue_type="+type;
+        try {
+            List<Map<String, Object>> lis = DBUtil.query(sql);
+            if(lis==null) return 0;
+            else
+            {
+                Map<String, Object> ma=lis.get(0);
+                return Integer.parseInt(ma.get("venue_price").toString());
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+
    /* public VenueDao findVenue(Venue venue)
     {
         try {

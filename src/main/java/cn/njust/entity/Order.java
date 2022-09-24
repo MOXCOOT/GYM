@@ -12,6 +12,19 @@ public class Order {
     private int sum;
     private String state;
 
+    public Order(){}
+
+    public Order(String oid, String rtype, String rid, String uid, Timestamp orderTime, Timestamp returnTime, int sum, String state) {
+        this.oid = oid;
+        this.rtype = rtype;
+        this.rid = rid;
+        this.uid = uid;
+        this.orderTime = orderTime;
+        this.returnTime = returnTime;
+        this.sum = sum;
+        this.state = state;
+    }
+
     public String getOid() {
         return oid;
     }

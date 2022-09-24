@@ -86,47 +86,42 @@ public class OrderDao extends BaseDao{
          *   输入order,根据order_id查看每个用户所有订单的信息
          */
 
-    public Order findOrderByOrderId(Order order)
+    public static Order findOrderByOrderId(String oid)
     {
-        try {
-            super.connect();
-            String sql = "select *from orde where order_id=?";
-            pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, order.getOid());
-            rs = pstmt.executeQuery();
-            if (rs.next()) {
-                Order e = new Order();
-                e.setOid(rs.getString("order_id"));
-                e.setUid(rs.getString("user_id"));
-                e.setRid(rs.getString("rent_id"));
-                e.setOrderTime(Timestamp.valueOf(rs.getString("order_time")));
-                e.setReturnTime(Timestamp.valueOf(rs.getString("return_time")));
-                e.setSum(rs.getInt("order_sum"));
-                e.setState(rs.getString("order_state"));
-                e.setRtype(rs.getString("rent_type"));
+        String sql = "select * from orde where order_id=" +oid;
+            try {
+                List<Map<String, Object>> lis = DBUtil.query(sql);
+                if(lis==null) return null;
+                else
+                {
+//                    Order(String oid, String rtype, String rid, String uid, Timestamp orderTime, Timestamp returnTime, int sum, String state)
+                    Map<String, Object> ma=lis.get(0);
+                    Order or = new Order(ma.get("order_id").toString(),ma.get("rent_id").toString(),ma.get("user_id").toString(),ma.get("rent_type").toString(),Timestamp.valueOf(ma.get("order_time").toString()),Timestamp.valueOf(ma.get("return_time").toString()),Integer.parseInt(ma.get("order_sum").toString()),ma.get("order_state").toString());
+                    return or;
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            super.closeAll();
-        }
-        return order;
+        return null;
     }
 
-
-
-    /**
-     *   输入order,根据订单id实现订单信息删除
-     */
-    public static void deleteOrderById(Order order) {
+//    public static void main(String[] args)
+//    {
+//        System.out.println(OrderDao.findOrderByOrderId("156"));
+//    }
+        /**
+         *   输入order,根据订单id实现订单信息删除
+         */
+    public static void deleteOrderById(String oid) {
         Map<String, Object> whereMap = new HashMap<>();
-        whereMap.put("order_id", order.getOid());//根据订单id寻找进而删除
+        whereMap.put("order_id", oid);//根据订单id寻找进而删除
         try {
             int count = DBUtil.delete("orde", whereMap);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
     /**
      * 输入order实现更新，可变更state
      */
