@@ -54,4 +54,15 @@
         <url-pattern>/servlet/VenueController</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <description>This is the description of my J2EE component</description>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <servlet-name>MessageController</servlet-name>
+        <servlet-class>cn.njust.controller.MessageController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MessageController</servlet-name>
+        <url-pattern>/servlet/MessageController</url-pattern>
+    </servlet-mapping>
+
 </web-app>

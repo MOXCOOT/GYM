@@ -1,6 +1,8 @@
 package cn.njust.entity;
 
 public class Equipment {
+
+
     private String id;
     private String name;
     private String type;
@@ -8,6 +10,15 @@ public class Equipment {
     private int price;
     private int state;
 
+    public Equipment(String id, String name, String type, int number, int price, int state) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.number = number;
+        this.price = price;
+        this.state = state;
+    }
+    public Equipment(){}
     public String getId() {
         return id;
     }

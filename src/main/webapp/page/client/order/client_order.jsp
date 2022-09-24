@@ -174,7 +174,7 @@
                                     %>
                                     <tr>
                                         <td><%=i.getOid()%></td>
-                                        <td><%=i.getRtype()%></td>
+                                        <td><%=i.getRname()%></td>
                                         <td><%=i.getOrderTime()%></td>
                                         <td><%=i.getReturnTime()%></td>
                                         <td><%=i.getSum()%></td>

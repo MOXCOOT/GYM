@@ -176,9 +176,8 @@
                                                     <div id="test" class="modal-body">
                                                         <form action="../servlet/VenueController">
                                                             <h2 class="from_title" >确认订单</h2>
-                                                            <h3>场地编号： <input  name="venue_id" type="text" readonly unselectable="on" value="<%=i.getId()%>" style= "background-color:transparent;border:0;width: 50px";></h3>
-<%--                                                            <h3>场地编号： <%=i.getId()%></h3>--%>
-                                                            <h3>场地名称： <input  name="venue_name" type="text" readonly unselectable="on" value="<%=i.getName()%>" style= "background-color:transparent;border:0;width: 120px";></h3>
+                                                            <h3>场地编号： <input  name="venue_id" type="text" readonly unselectable="on" value="<%=i.getId()%>" style= "background-color:transparent;border:0;width: 50px"></h3>
+                                                            <h3>场地名称： <input  name="venue_name" type="text" readonly unselectable="on" value="<%=i.getName()%>" style= "background-color:transparent;border:0;width: 120px"></h3>
                                                             <h3>租赁时长： <select name="hours">
                                                                 <option>1</option>
                                                                 <option>2</option>
@@ -188,19 +187,31 @@
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-default" data-dismiss="modal">取消
                                                                 </button>
-                                                                <script type="text/javascript">
-                                                                    // function demo()
-                                                                    // {
-                                                                    //     session.setAttribute("vId","SFSDA");
-                                                                    // }
-                                                                </script>
-                                                                <input name="123" type="submit" class="btn btn-primary" value="确定"  onclick="demo()">
+<%--                                                                <input name="p"type="submit" class="btn btn-primary" value="确定">--%>
+                                                                <input id="p" name="p" type="submit" class="btn btn-primary" value="确定" data-dismiss="modal" data-toggle="modal" data-target="#myModal<%=i.getId()%>myModal">
+                                                            </div>
+<%--                                                        </form>--%>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="myModal<%=i.getId()%>myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+<%--                                                        <form action="../servlet/VenueController">--%>
+                                                            <h2 class="from_title" >下单成功！请等待管理员审核。</h2>
+                                                            <div class="modal-footer">
+<%--                                                                <button type="button" class="btn btn-primary" data-dismiss="modal">确定--%>
+<%--                                                                </button>--%>
+                                                                <input name="ok" type="submit" class="btn btn-primary" value="确定">
                                                             </div>
                                                         </form>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
                                     </tr>
                                     <%
                                             }

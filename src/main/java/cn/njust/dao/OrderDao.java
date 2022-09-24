@@ -1,9 +1,7 @@
 package cn.njust.dao;
 
 import cn.njust.entity.Order;
-import cn.njust.entity.User;
 import cn.njust.utils.DBUtil;
-import com.sun.org.apache.xpath.internal.operations.Or;
 
 import java.sql.Date;
 import java.sql.SQLException;
@@ -41,7 +39,7 @@ public class OrderDao extends BaseDao{
             j.setOrderTime(Timestamp.valueOf(i.get("order_time").toString()));
             j.setSum(Integer.parseInt(i.get("order_sum").toString()));
             j.setState(i.get("order_state").toString());
-            j.setRtype(i.get("rent_type").toString());
+            j.setRname(i.get("rent_name").toString());
             orders.add(j);
         }
 
@@ -76,7 +74,7 @@ public class OrderDao extends BaseDao{
             j.setOrderTime(Timestamp.valueOf(i.get("order_time").toString()));
             j.setSum(Integer.parseInt(i.get("order_sum").toString()));
             j.setState(i.get("order_state").toString());
-            j.setRtype(i.get("rent_type").toString());
+            j.setRname(i.get("rent_name").toString());
             orders.add(j);
         }
         return orders;
@@ -96,7 +94,7 @@ public class OrderDao extends BaseDao{
                 {
 //                    Order(String oid, String rtype, String rid, String uid, Timestamp orderTime, Timestamp returnTime, int sum, String state)
                     Map<String, Object> ma=lis.get(0);
-                    Order or = new Order(ma.get("order_id").toString(),ma.get("rent_id").toString(),ma.get("user_id").toString(),ma.get("rent_type").toString(),Timestamp.valueOf(ma.get("order_time").toString()),Timestamp.valueOf(ma.get("return_time").toString()),Integer.parseInt(ma.get("order_sum").toString()),ma.get("order_state").toString());
+                    Order or = new Order(ma.get("order_id").toString(),ma.get("rent_id").toString(),ma.get("user_id").toString(),ma.get("rent_name").toString(),Timestamp.valueOf(ma.get("order_time").toString()),Timestamp.valueOf(ma.get("return_time").toString()),Integer.parseInt(ma.get("order_sum").toString()),ma.get("order_state").toString());
                     return or;
                 }
             } catch (SQLException e) {
@@ -154,7 +152,7 @@ public class OrderDao extends BaseDao{
             map.put("order_state",order.getState() );
             map.put("return_time",order.getReturnTime());
             map.put("order_sum",order.getSum());
-            map.put("rent_type",order.getRtype());
+            map.put("rent_name",order.getRname());
         try {
             int count = DBUtil.insert("orde", map);
         } catch (SQLException e) {
@@ -167,7 +165,7 @@ public class OrderDao extends BaseDao{
 //        or.setOid("fsadf");
 //        or.setState("fdsa");
 //        or.setUid("fdsaf");
-//        or.setRtype("fdsf");
+//        or.setRname("fdsf");
 //        or.setRid("dsaf");
 //
 //        OrderDao.insertOrder(or);

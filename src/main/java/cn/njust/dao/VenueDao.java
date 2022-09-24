@@ -1,5 +1,6 @@
 package cn.njust.dao;
 
+import cn.njust.Service.Customer.RentService;
 import cn.njust.entity.Order;
 import cn.njust.entity.User;
 import cn.njust.entity.Venue;
@@ -67,23 +68,30 @@ public class VenueDao extends BaseDao{
             e.printStackTrace();
         }
     }
-    public static int findPriceByType(String type)
+    public static int findPriceByName(String vName)
     {
-        String sql = "select venue_price from venue where venue_type="+type;
+        String sql = "select venue_price from venue where venue_name="+ vName;
+        int sum=0;
         try {
             List<Map<String, Object>> lis = DBUtil.query(sql);
-            if(lis==null) return 0;
-            else
-            {
                 Map<String, Object> ma=lis.get(0);
-                return Integer.parseInt(ma.get("venue_price").toString());
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+                sum= (int) ma.get("venue_price");
+              System.out.println(sum);
+                return sum;
         }
-        return 0;
+        catch (SQLException e) {
+            e.printStackTrace();
+           // System.out.println(sum);
+        }
+        finally {
+            System.out.println(sum);
+            return sum;
+        }
     }
-
+   /* public static void main(String[] args){
+        VenueDao.findPriceByType("'足球'");
+    }
+*/
 
    /* public VenueDao findVenue(Venue venue)
     {

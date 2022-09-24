@@ -178,24 +178,35 @@
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-body">
-                                                        <form action="#">
+                                                        <form action="../servlet/EquipmentController">
                                                             <h2 class="from_title" >确认订单</h2>
-                                                            <h3>器材编号： <%=i.getId()%></h3>
-                                                            <h3>器材名称： <%=i.getName()%></h3>
-                                                            <h3>租赁时长： <select>
+                                                            <h3>器材编号： <input  name="equipment_id" type="text" readonly unselectable="on" value="<%=i.getId()%>" style= "background-color:transparent;border:0;width: 50px"></h3>
+                                                            <h3>器材名称： <input  name="equipment_name" type="text" readonly unselectable="on" value="<%=i.getName()%>" style= "background-color:transparent;border:0;width: 120px"></h3>
+                                                            <h3>租赁时长： <select name="hours">
                                                                 <option>1</option>
                                                                 <option>2</option>
                                                                 <option>3</option>
                                                                 <option>4</option>
                                                             </select></h3>
-                                                        </form>
+<%--                                                        </form>--%>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-default" data-dismiss="modal">取消
                                                         </button>
-                                                        <button type="button" class="btn btn-primary">
-                                                            确定
-                                                        </button>
+                                                        <input id="p" name="p" type="submit" class="btn btn-primary" value="确定" data-dismiss="modal" data-toggle="modal" data-target="#myModal<%=i.getId()%>myModal">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="myModal<%=i.getId()%>myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <h2 class="from_title" >下单成功！请等待管理员审核。</h2>
+                                                        <div class="modal-footer">
+                                                            <input name="ok2" type="submit" class="btn btn-primary" value="确定" >
+                                                        </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>

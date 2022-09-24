@@ -2,10 +2,12 @@ package cn.njust.dao;
 
 import cn.njust.entity.Equipment;
 
+import cn.njust.entity.Order;
 import cn.njust.utils.DBUtil;
 
 import java.sql.SQLException;
 import java.sql.SQLOutput;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -63,16 +65,50 @@ public class EquipmentDao extends BaseDao {
             e.printStackTrace();
         }
     }
+    public static int findPriceByName(String name)
+    {
+        String sql = "select equipment_price from equipment where equipment_name= "+name ;
+        int sum=0;
+        try {
+            List<Map<String, Object>> lis = DBUtil.query(sql);
+                Map<String, Object> ma=lis.get(0);
+            sum= (int) ma.get("equipment_price");
+            return sum;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            return sum;
+        }
+    }
+
     /**
      * 输入equipment实现更新，可变更state,price,number
      */
+    public static Equipment findEquipmentByEquipmentId(String eid)
+    {
+        String sql = "select * from equipment where equipment_id=" +eid;
+        try {
+            List<Map<String, Object>> lis = DBUtil.query(sql);
+            if(lis.isEmpty()) return null;
+            else
+            {
+                Map<String, Object> ma=lis.get(0);
+                return new Equipment(ma.get("equipment_id").toString(),ma.get("equipment_name").toString(),ma.get("equipment_type").toString(),Integer.parseInt(ma.get("equipment_number").toString()),Integer.parseInt(ma.get("equipment_price").toString()),Integer.parseInt(ma.get("equipment_state").toString()));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
     public static void updateEquipment(Equipment equipment) {
         Map<String, Object> map = new HashMap<>();
-        map.put("equipment_number",equipment.getNumber() );//更新数量
+        map.put("equipment_number",equipment.getNumber()-1 );//更新数量
         map.put("equipment_price",equipment.getPrice() );//更新价格
         map.put("equipment_state",equipment.getState() );//更新状态
         Map<String, Object> whereMap = new HashMap<>();
-        whereMap.put("equipment_id", equipment.getId());//根据id寻找
+        whereMap.put("equipment_id",equipment.getId());//根据id寻找
         try {
             int count = DBUtil.update("equipment", map, whereMap);
         } catch (SQLException e) {

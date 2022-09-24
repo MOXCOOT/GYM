@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 public class Order {
     private String oid;//订单id
-    private String rtype;
+    private String rname;
     private String rid;//器材id
     private String uid;//用户id
     private Timestamp orderTime;
@@ -14,9 +14,9 @@ public class Order {
 
     public Order(){}
 
-    public Order(String oid, String rtype, String rid, String uid, Timestamp orderTime, Timestamp returnTime, int sum, String state) {
+    public Order(String oid, String rname, String rid, String uid, Timestamp orderTime, Timestamp returnTime, int sum, String state) {
         this.oid = oid;
-        this.rtype = rtype;
+        this.rname = rname;
         this.rid = rid;
         this.uid = uid;
         this.orderTime = orderTime;
@@ -81,11 +81,11 @@ public class Order {
         this.returnTime = returnTime;
     }
 
-    public String getRtype() {
-        return rtype;
+    public String getRname() {
+        return rname;
     }
 
-    public void setRtype(String rtype) {
-        this.rtype = rtype;
+    public void setRname(String rname) {
+        this.rname = rname;
     }
 }
