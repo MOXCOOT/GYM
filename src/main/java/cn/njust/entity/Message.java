@@ -4,20 +4,10 @@ import java.sql.Date;
 import java.sql.Timestamp;
 
 public class Message {
-    private String aid;
     private String uid;
     private String oid;
     private Timestamp time;
     private String id;
-    private String content;
-
-    public String getAid() {
-        return aid;
-    }
-
-    public void setAid(String aid) {
-        this.aid = aid;
-    }
 
     public String getUid() {
         return uid;
@@ -47,15 +37,6 @@ public class Message {
     public void setId(String id) {
         this.id = id;
     }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
 
 
     public Timestamp getTime() {

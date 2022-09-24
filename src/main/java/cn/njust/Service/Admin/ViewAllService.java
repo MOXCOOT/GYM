@@ -1,21 +1,44 @@
 package cn.njust.Service.Admin;
 
+import cn.njust.dao.OrderDao;
+import cn.njust.dao.UserDao;
 import cn.njust.entity.*;
 
-public class ViewAllService {
-    public Equipment[] viewEquipment(){
-        return null;
-    }
-    public Venue[] viewVenue(){
-        return null;
-    }
-    public Order[] viewOrder(String aid)
-    {
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.util.List;
 
-        return null;
-    }
-    public Message[] viewMessage(String aid)
+public class ViewAllService {
+    public List<Equipment> viewEquipment()
     {
         return null;
+    }
+    public List<Venue> viewVenue()
+    {
+        return null;
+    }
+    public List<Order> viewOrder()
+    {
+        List<Order> lisorder = OrderDao.findAllOrder();
+        for(Order i:lisorder)
+        {
+            Date date = new Date(System.currentTimeMillis());
+            Timestamp t = new Timestamp(date.getTime());
+            if(i.getReturnTime().before(t))
+            {
+                i.setState("已逾期");
+
+            }
+        }
+        return lisorder;
+    }
+    public List<Message> viewMessage()
+
+    {
+        return null;
+    }
+    public List<User> viewUser(){
+        List<User> lisuser = UserDao.findAllUser();
+        return lisuser;
     }
 }

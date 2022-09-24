@@ -17,7 +17,7 @@ public class VenueController extends HttpServlet {
         Object queding = request.getParameter("ok");
 
         User cus = (User) request.getSession().getAttribute("user");
-        System.out.println(queding);
+       // System.out.println(queding);
         if(queding!=null)
         {
             String venue_id = request.getParameter("venue_id");

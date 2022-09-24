@@ -27,7 +27,6 @@ public class ViewService {
             if(i.getReturnTime().before(t))
             {
                 i.setState("已逾期");
-
             }
         }
         return lisorder;
@@ -35,7 +34,13 @@ public class ViewService {
 
     public List<Message> viewMessage(String uid)
     {
-        return null;
+        List<Order> lisorder = OrderDao.findAllOrderByUserid(uid);
+        for(Order i:lisorder)
+        {
+            if (!i.getState().equals("已逾期"))
+                return null;
+        }
+        return MessageDao.findAllMessageByUserid(uid);
     }
 //    public static void main(String[] args){
 //        Date date = new Date(System.currentTimeMillis());

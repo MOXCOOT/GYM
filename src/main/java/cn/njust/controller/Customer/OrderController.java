@@ -14,10 +14,8 @@ public class OrderController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         User cus = (User) request.getSession().getAttribute("user");
-        System.out.println("success");
-//        request.getRequestDispatcher("../page/client_order.jsp").forward(request, response);V
         ViewService vs = new ViewService();
-        System.out.println(vs.viewOrder(cus.getId()));
+        //System.out.println(vs.viewOrder(cus.getId()));
         request.setAttribute("orderList",vs.viewOrder(cus.getId()));
         request.getRequestDispatcher("../page/client/order/client_order.jsp").forward(request, response);
     }

@@ -69,7 +69,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../page/client/person/message.jsp" class="nav-link">
+                                <a href="../servlet/MessageController" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>收信箱</p>
                                 </a>
@@ -160,8 +160,6 @@
                                     <!-- 此处插入c标签 -->
                                     <%
                                         List<Equipment> listEquip=(List<Equipment>) request.getAttribute("equipList");
-//                                        System.out.println("fedsaf");
-                                        System.out.println(listEquip);
                                         if(listEquip!=null)
                                         {
                                             for(Equipment i:listEquip)
@@ -188,11 +186,10 @@
                                                                 <option>3</option>
                                                                 <option>4</option>
                                                             </select></h3>
-<%--                                                        </form>--%>
+<%--                                                    </form>--%>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">取消
-                                                        </button>
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
                                                         <input id="p" name="p" type="submit" class="btn btn-primary" value="确定" data-dismiss="modal" data-toggle="modal" data-target="#myModal<%=i.getId()%>myModal">
                                                     </div>
                                                 </div>

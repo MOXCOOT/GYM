@@ -15,7 +15,7 @@ public class EquipmentController extends HttpServlet {
     {
         Object queding = request.getParameter("ok2");
         User cus = (User) request.getSession().getAttribute("user");
-        System.out.println("hellooooo"+queding);
+       // System.out.println("hellooooo"+queding);
         if(queding!=null)
         {
             String equipment_id = request.getParameter("equipment_id");

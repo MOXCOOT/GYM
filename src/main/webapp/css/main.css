@@ -37,6 +37,7 @@ body{
     overflow: hidden;
     position: relative;
     width: 100%;
+    opacity: 0.5;
 }
 
 .from{

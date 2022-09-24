@@ -32,6 +32,7 @@ public class UserDao extends BaseDao{
             j.setPassword(i.get("user_password").toString());
             j.setName(i.get("user_name").toString());
             j.setNumber(i.get("user_number").toString());
+            users.add(j);
         }
         //System.out.println(list.get(0).get("user_state"));
         return users;
@@ -66,11 +67,6 @@ public class UserDao extends BaseDao{
     }
 
 
-
-
-
-
-
     /**
      *   输入user,实现该用户信息插入
      */
@@ -90,9 +86,9 @@ public class UserDao extends BaseDao{
     /**
      * 输入用户实现该用户信息删除
      */
-    public static void deleteUser(User user) {
+    public static void deleteUser(String uid) {
         Map<String, Object> whereMap = new HashMap<>();
-        whereMap.put("user_id", user.getId());//根据id寻找进而删除
+        whereMap.put("user_id", uid);//根据id寻找进而删除
         try {
             int count = DBUtil.delete("user", whereMap);
         } catch (SQLException e) {

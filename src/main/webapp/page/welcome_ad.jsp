@@ -62,7 +62,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../page/administrator/count/allCount.jsp" class="nav-link">
+                <a href="../servlet/CountController" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>所有账号</p>
                 </a>
@@ -78,7 +78,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../page/administrator/order/allOrder.jsp" class="nav-link">
+                <a href="../servlet/OrderController_ad" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>所有订单</p>
                 </a>

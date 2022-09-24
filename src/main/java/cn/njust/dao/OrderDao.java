@@ -103,9 +103,11 @@ public class OrderDao extends BaseDao{
         return null;
     }
 
+//
+//
 //    public static void main(String[] args)
 //    {
-//        System.out.println(OrderDao.findOrderByOrderId("156"));
+//        System.out.println(OrderDao.findOrderStateByOid("220924842"));
 //    }
         /**
          *   输入order,根据订单id实现订单信息删除

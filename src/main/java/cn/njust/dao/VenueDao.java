@@ -76,15 +76,14 @@ public class VenueDao extends BaseDao{
             List<Map<String, Object>> lis = DBUtil.query(sql);
                 Map<String, Object> ma=lis.get(0);
                 sum= (int) ma.get("venue_price");
-              System.out.println(sum);
+              //System.out.println(sum);
                 return sum;
         }
         catch (SQLException e) {
             e.printStackTrace();
-           // System.out.println(sum);
         }
         finally {
-            System.out.println(sum);
+           // System.out.println(sum);
             return sum;
         }
     }

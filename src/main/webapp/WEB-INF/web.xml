@@ -21,6 +21,17 @@
     <servlet>
         <description>This is the description of my J2EE component</description>
         <display-name>This is the display name of my J2EE component</display-name>
+        <servlet-name>CountController</servlet-name>
+        <servlet-class>cn.njust.controller.Admin.CountController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CountController</servlet-name>
+        <url-pattern>/servlet/CountController</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description>This is the description of my J2EE component</description>
+        <display-name>This is the display name of my J2EE component</display-name>
         <servlet-name>OrderController</servlet-name>
         <servlet-class>cn.njust.controller.Customer.OrderController</servlet-class>
     </servlet>
@@ -63,6 +74,18 @@
     <servlet-mapping>
         <servlet-name>MessageController</servlet-name>
         <url-pattern>/servlet/MessageController</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <description>This is the description of my J2EE component</description>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <servlet-name>OrderController_ad</servlet-name>
+        <servlet-class>cn.njust.controller.Admin.OrderController_ad</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderController_ad</servlet-name>
+        <url-pattern>/servlet/OrderController_ad</url-pattern>
     </servlet-mapping>
 
 </web-app>

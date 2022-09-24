@@ -1,3 +1,5 @@
+<%@ page import="cn.njust.entity.User" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--<%@ page import=""@%>--%>
 <html lang="en">
@@ -5,12 +7,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>体育馆管理系统 | 我的首页</title>
-    <link rel="stylesheet" href="../../../css/all.min.css">
-    <link rel="stylesheet" href="../../../css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="../../../css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="../../../css/buttons.bootstrap4.min.css">
-    <link rel="stylesheet" href="../../../css/adminlte.min.css">
-    <link rel="stylesheet" href="../../../css/modal.css">
+    <link rel="stylesheet" href=" ../css/all.min.css">
+    <link rel="stylesheet" href=" ../css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href=" ../css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href=" ../css/buttons.bootstrap4.min.css">
+    <link rel="stylesheet" href=" ../css/adminlte.min.css">
+    <link rel="stylesheet" href=" ../css/modal.css">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper" >
@@ -22,7 +24,7 @@
                 <a href="../../welcome_ad.jsp" class="nav-link">返回首页</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="../../login.jsp" class="nav-link">退出登录</a>
+                <a href=" ../../login.jsp" class="nav-link">退出登录</a>
             </li>
         </ul>
     </nav>
@@ -30,8 +32,8 @@
     <!-- 侧边栏容器 -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- 侧边栏logo -->
-        <a href="../../welcome_ad.jsp" class="brand-link">
-            <img src="../../../img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <a href=" ../../welcome_ad.jsp" class="brand-link">
+            <img src=" ../img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
             <span class="brand-text font-weight-light">体育馆管理系统</span>
         </a>
 
@@ -39,7 +41,7 @@
         <div class="sidebar">
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="../../../img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                    <img src=" ../img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
                     <a href="#" class="d-block">管理员</a>
@@ -59,7 +61,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../../../page/administrator/count/allCount.jsp" class="nav-link active">
+                                <a href=" #" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>所有账号</p>
                                 </a>
@@ -75,7 +77,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../../../page/administrator/order/allOrder.jsp" class="nav-link">
+                                <a href="../servlet/OrderController_ad" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>所有订单</p>
                                 </a>
@@ -83,7 +85,7 @@
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../../../page/administrator/order/exam.jsp" class="nav-link">
+                                <a href=" ../page/administrator/order/exam.jsp" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>审核订单</p>
                                 </a>
@@ -91,7 +93,7 @@
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../../../page/administrator/order/hurry.jsp" class="nav-link">
+                                <a href=" ../page/administrator/order/hurry.jsp" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>催促订单</p>
                                 </a>
@@ -107,7 +109,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../../../page/administrator/shop/equipment.jsp" class="nav-link">
+                                <a href=" ../page/administrator/shop/equipment.jsp" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>器材管理</p>
                                 </a>
@@ -115,7 +117,7 @@
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../../../page/administrator/shop/venue.jsp" class="nav-link">
+                                <a href=" ../page/administrator/shop/venue.jsp" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>场地管理</p>
                                 </a>
@@ -158,30 +160,51 @@
                                     <tbody>
 
                                     <!-- 此处插入c标签 -->
-
-
-
+                                    <%
+                                        List<User> listUser=(List<User>) request.getAttribute("userList");
+                                        if(listUser!=null)
+                                        {
+                                            for(User i:listUser)
+                                            {
+                                    %>
                                     <tr>
-                                        <td>sc</td>
-                                        <td>管理员</td>
-                                        <td>13713713713</td>
-                                        <td><button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#myModal">注销账号</button></td>
-                                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <td><%=i.getId()%></td>
+                                        <td><%=i.getName()%></td>
+                                        <td><%=i.getNumber()%></td>
+                                        <td><button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#myModal<%=i.getId()%>">注销账号</button></td>
+                                        <div class="modal fade" id="myModal<%=i.getId()%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h2 class="modal-title" id="myModalLabel">你确定要永久注销该账号吗？<br>将无法恢复！</h2>
-                                                    </div>
-
+                                                    <div class="modal-body">
+                                                        <form action="../servlet/CountController">
+                                                        <h2 class="modal-title" id="myModalLabel">你确定要永久注销用户<input  name="user_id" type="text" readonly unselectable="on" value="<%=i.getId()%>" style= "background-color:transparent;border:0;width: 90px">吗？将无法恢复！</h2>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
-                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">确定</button>
+                                                        <input id="p" name="p" type="submit" class="btn btn-danger" value="确定" data-dismiss="modal" data-toggle="modal" data-target="#myModal<%=i.getId()%>myModal">
+                                                    </div>
+                                                            <%--                                                        </form>--%>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        </div>
+                                        <div class="modal fade" id="myModal<%=i.getId()%>myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <h2 class="from_title" >注销成功</h2>
+                                                        <div class="modal-footer">
+                                                            <input name="ok2" type="submit" class="btn btn-primary" value="确定" >
+                                                        </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </tr>
-
+                                    <%
+                                            }
+                                        }
+                                    %>
 
                                     </tbody>
                                     <tfoot>
@@ -208,22 +231,22 @@
     </footer>
 </div>
 
-<script src="../../../js/jquery.min.js"></script>
-<script src="../../../js/bootstrap.bundle.min.js"></script>
-<script src="../../../js/jquery.dataTables.min.js"></script>
-<script src="../../../js/dataTables.bootstrap4.min.js"></script>
-<script src="../../../js/dataTables.responsive.min.js"></script>
-<script src="../../../js/responsive.bootstrap4.min.js"></script>
-<script src="../../../js/dataTables.buttons.min.js"></script>
-<script src="../../../js/buttons.bootstrap4.min.js"></script>
-<script src="../../../js/jszip.min.js"></script>
-<script src="../../../js/pdfmake.min.js"></script>
-<script src="../../../js/vfs_fonts.js"></script>
-<script src="../../../js/buttons.html5.min.js"></script>
-<script src="../../../js/buttons.print.min.js"></script>
-<script src="../../../js/buttons.colVis.min.js"></script>
-<script src="../../../js/adminlte.min.js"></script>
-<script src="../../../js/demo.js"></script>
+<script src=" ../js/jquery.min.js"></script>
+<script src=" ../js/bootstrap.bundle.min.js"></script>
+<script src=" ../js/jquery.dataTables.min.js"></script>
+<script src=" ../js/dataTables.bootstrap4.min.js"></script>
+<script src=" ../js/dataTables.responsive.min.js"></script>
+<script src=" ../js/responsive.bootstrap4.min.js"></script>
+<script src=" ../js/dataTables.buttons.min.js"></script>
+<script src=" ../js/buttons.bootstrap4.min.js"></script>
+<script src=" ../js/jszip.min.js"></script>
+<script src=" ../js/pdfmake.min.js"></script>
+<script src=" ../js/vfs_fonts.js"></script>
+<script src=" ../js/buttons.html5.min.js"></script>
+<script src=" ../js/buttons.print.min.js"></script>
+<script src=" ../js/buttons.colVis.min.js"></script>
+<script src=" ../js/adminlte.min.js"></script>
+<script src=" ../js/demo.js"></script>
 <script>
     $(function () {
         $("#example1").DataTable({

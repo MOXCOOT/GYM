@@ -13,10 +13,10 @@ public class RegisterService {
         else if(number.length()!=11) return "手机号错误或已被注册";
         UserDao dao=new UserDao();
         User newid=new User();
-        System.out.println(name);
-        System.out.println(number);
-        System.out.println(password1);
-        System.out.println(password2);
+//        System.out.println(name);
+//        System.out.println(number);
+//        System.out.println(password1);
+//        System.out.println(password2);
         //返回 3 代表手机号错误或已被注册
         //返回 2 代表有空空值
         //返回 1 代表两次密码不一致
@@ -45,8 +45,10 @@ public class RegisterService {
         newid.setName(name);
         newid.setNumber(number);
         UserDao.insertSingleUser(newid);
-        System.out.println("服务端插入成功");
+       // System.out.println("服务端插入成功");
         //将数据插入数据库
         return "注册成功";
     }
+
+
 }

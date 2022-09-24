@@ -69,7 +69,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../page/client/person/message.jsp" class="nav-link">
+                                <a href="../servlet/MessageController" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>收信箱</p>
                                 </a>
@@ -165,7 +165,6 @@
                                     <!-- 此处插入c标签 -->
                                     <%
                                         List<Order> listOrder=(List<Order>) request.getAttribute("orderList");
-//                                        System.out.println("fedsaf");
                                         System.out.println(listOrder);
                                         if(listOrder!=null)
                                         {

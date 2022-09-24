@@ -1,6 +1,7 @@
 package cn.njust.dao;
 
 import cn.njust.entity.Message;
+import cn.njust.entity.Order;
 import cn.njust.utils.DBUtil;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -26,8 +27,6 @@ public class MessageDao {
         {
             Message j=new Message();
             j.setId(i.get("message_id").toString());
-            j.setAid(i.get("admin_id").toString());
-            j.setContent(i.get("message_content").toString());
             j.setOid(i.get("order_id").toString());
             j.setUid(i.get("user_id").toString());
             j.setTime(Timestamp.valueOf((i.get("message_time").toString())));
@@ -40,6 +39,34 @@ public class MessageDao {
     /**
      *   输入Message,实现订单信息插入(不需要输入时间，时间为系统当前自带)
      */
+
+
+    public static List<Message> findAllMessageByUserid(String uid) {
+        String sql = "select * from message where user_id=?";
+        List<Map<String, Object>> list = null;
+        Object[] param={uid};
+        List<Message> messages = new ArrayList<>();
+        try {
+            list = DBUtil.executeQuery(sql,param);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        for (Map<String, Object> i : list) {
+            Message j = new Message();
+            j.setOid(i.get("order_id").toString());
+            j.setUid(i.get("user_id").toString());
+            j.setId(i.get("message_id").toString());
+            j.setTime(Timestamp.valueOf(i.get("message_time").toString()));
+            messages.add(j);
+        }
+        return messages;
+    }
+
+    /**
+     *   输入message,根据message_id查看每个用户所有订单的信息
+     */
+
+
     public static void insertMessage(Message message){
         Map<String, Object> map = new HashMap<>();
         Date date = new Date(System.currentTimeMillis());//获取当前时间戳
@@ -48,10 +75,8 @@ public class MessageDao {
         message.setTime(Timestamp.valueOf(simpleDateFormat.format(t)));
         map.put("user_id",message.getUid());
         map.put("message_id", message.getId());
-        map.put("admin_id",message.getAid() );
         map.put("message_time",message.getTime() );
         map.put("order_id",message.getOid() );
-        map.put("message_content",message.getContent());
         try {
             int count = DBUtil.insert("message", map);
         } catch (SQLException e) {
