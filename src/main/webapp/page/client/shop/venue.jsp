@@ -167,8 +167,8 @@
                                     <tr>
                                         <td><%=i.getId()%></td>
                                         <td><%=i.getName()%></td>
-                                        <td><%=i.getType()%>元/小时</td>
-                                        <td><%=i.getPrice()%></td>
+                                        <td><%=i.getType()%></td>
+                                        <td><%=i.getPrice()%>元/小时</td>
                                         <td><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal<%=i.getId()%>">租赁</button></td>
                                         <div class="modal fade" id="myModal<%=i.getId()%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">

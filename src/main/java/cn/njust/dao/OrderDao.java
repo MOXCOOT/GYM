@@ -91,7 +91,7 @@ public class OrderDao extends BaseDao{
         String sql = "select * from orde where order_id=" +oid;
             try {
                 List<Map<String, Object>> lis = DBUtil.query(sql);
-                if(lis==null) return null;
+                if(lis.isEmpty()) return null;
                 else
                 {
 //                    Order(String oid, String rtype, String rid, String uid, Timestamp orderTime, Timestamp returnTime, int sum, String state)
@@ -140,13 +140,13 @@ public class OrderDao extends BaseDao{
      *   输入Order,实现订单信息插入(不需要输入时间，时间为系统当前自带)
      */
     public static void insertOrder(Order order){
-            Map<String, Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>();
         Date date = new Date(System.currentTimeMillis());//获取当前时间戳
         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Timestamp t1 = new Timestamp(date.getTime());
-        Timestamp t2 = new Timestamp(date.getTime()+36000);
-        order.setOrderTime(Timestamp.valueOf(simpleDateFormat.format(t1)));
-        order.setReturnTime(Timestamp.valueOf(simpleDateFormat.format(t2)));
+//        Timestamp t1 = new Timestamp(date.getTime());
+//        Timestamp t2 = new Timestamp(date.getTime()+36000);
+//        order.setOrderTime(Timestamp.valueOf(simpleDateFormat.format(t1)));
+//        order.setReturnTime(Timestamp.valueOf(simpleDateFormat.format(t2)));
             map.put("user_id",order.getUid());
             map.put("order_id", order.getOid());
             map.put("rent_id",order.getRid() );
@@ -161,6 +161,17 @@ public class OrderDao extends BaseDao{
             e.printStackTrace();
         }
     }
+//    public static void main(String[] args)
+//    {
+//        Order or=new Order();
+//        or.setOid("fsadf");
+//        or.setState("fdsa");
+//        or.setUid("fdsaf");
+//        or.setRtype("fdsf");
+//        or.setRid("dsaf");
+//
+//        OrderDao.insertOrder(or);
+//    }
     /*public static void main(String[] args)
     {
         Order o=new Order();
