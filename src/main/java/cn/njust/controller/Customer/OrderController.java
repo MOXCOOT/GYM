@@ -1,4 +1,4 @@
-package cn.njust.controller;
+package cn.njust.controller.Customer;
 
 import cn.njust.Service.Customer.ViewService;
 import cn.njust.entity.User;

@@ -11,7 +11,7 @@
         <description>This is the description of my J2EE component</description>
         <display-name>This is the display name of my J2EE component</display-name>
         <servlet-name>LoginController</servlet-name>
-        <servlet-class>cn.njust.controller.LoginController</servlet-class>
+        <servlet-class>cn.njust.controller.Customer.LoginController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
@@ -22,7 +22,7 @@
         <description>This is the description of my J2EE component</description>
         <display-name>This is the display name of my J2EE component</display-name>
         <servlet-name>OrderController</servlet-name>
-        <servlet-class>cn.njust.controller.OrderController</servlet-class>
+        <servlet-class>cn.njust.controller.Customer.OrderController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>OrderController</servlet-name>
@@ -35,7 +35,7 @@
         <description>This is the description of my J2EE component</description>
         <display-name>This is the display name of my J2EE component</display-name>
         <servlet-name>EquipmentController</servlet-name>
-        <servlet-class>cn.njust.controller.EquipmentController</servlet-class>
+        <servlet-class>cn.njust.controller.Customer.EquipmentController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>EquipmentController</servlet-name>
@@ -47,7 +47,7 @@
         <description>This is the description of my J2EE component</description>
         <display-name>This is the display name of my J2EE component</display-name>
         <servlet-name>VenueController</servlet-name>
-        <servlet-class>cn.njust.controller.VenueController</servlet-class>
+        <servlet-class>cn.njust.controller.Customer.VenueController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>VenueController</servlet-name>
@@ -58,7 +58,7 @@
         <description>This is the description of my J2EE component</description>
         <display-name>This is the display name of my J2EE component</display-name>
         <servlet-name>MessageController</servlet-name>
-        <servlet-class>cn.njust.controller.MessageController</servlet-class>
+        <servlet-class>cn.njust.controller.Customer.MessageController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>MessageController</servlet-name>

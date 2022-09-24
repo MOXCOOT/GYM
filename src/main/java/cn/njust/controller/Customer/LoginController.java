@@ -1,4 +1,4 @@
-package cn.njust.controller;
+package cn.njust.controller.Customer;
 
 import cn.njust.Service.Customer.RegisterService;
 import cn.njust.Service.Login.LoginService;
@@ -46,6 +46,11 @@ public class LoginController extends HttpServlet {
 
         if(login!=null)
         {
+            if(name.equals("Admin")&&pwd.equals("Admin"))
+            {
+                //正确登录，转到管理员主页
+                request.getRequestDispatcher("../page/welcome_ad.jsp").forward(request, response);
+            }
             System.out.println("login");
             LoginService lg=new LoginService();
             User loginNow=lg.login(name,pwd);

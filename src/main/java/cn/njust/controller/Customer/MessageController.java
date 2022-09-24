@@ -1,4 +1,4 @@
-package cn.njust.controller;
+package cn.njust.controller.Customer;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
