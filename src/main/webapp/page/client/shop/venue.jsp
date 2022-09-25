@@ -1,5 +1,6 @@
 <%@ page import="cn.njust.entity.Venue" %>
 <%@ page import="java.util.List" %>
+<%@ page import="cn.njust.entity.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--<%@ page import=""@%>--%>
 <html lang="en">
@@ -46,7 +47,11 @@
                     <img src=" ../img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">张少威</a>
+                    <a href="#" class="d-block"><%
+                        User u=(User) request.getSession().getAttribute("user");
+                    %>
+
+                        <a href="#" class="d-block"><%=u.getName()%></a>
                 </div>
             </div>
 
@@ -71,7 +76,7 @@
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href=" ../page/client/person/modification.jsp" class="nav-link">
+                                <a href="../servlet/UserController" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>修改信息</p>
                                 </a>

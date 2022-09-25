@@ -76,7 +76,7 @@
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href=" ../page/client/person/modification.jsp" class="nav-link">
+                                <a href=" ../servlet/UserController" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>修改信息</p>
                                 </a>
@@ -92,7 +92,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item active">
-                                <a href=" ../servlet/EquipmentController" class="nav-link">
+                                <a href="../servlet/EquipmentController" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>租借器材</p>
                                 </a>

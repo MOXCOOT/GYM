@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="container">
-    <form action="#" class="from" id="from1">
+    <form action="servlet/UserController" class="from" id="from1">
         <h2 class="message"><td> <div style="color:black; align:center;">${message }</div> </td> </h2>
 <%--        <button >确定</button>--%>
         <input class="btn" type="button" onclick="location.href='../page/login.jsp'" value="确定" />

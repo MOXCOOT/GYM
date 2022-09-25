@@ -71,7 +71,7 @@
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../page/client/person/modification.jsp" class="nav-link">
+                                <a href="../servlet/UserController" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>修改信息</p>
                                 </a>

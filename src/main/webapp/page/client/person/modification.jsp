@@ -1,3 +1,4 @@
+<%@ page import="cn.njust.entity.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--<%@ page import=""@%>--%>
 <html lang="en">
@@ -45,10 +46,12 @@
                     <img src=" ../img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">张少威</a>
+                    <a href="#" class="d-block"><%
+                        User u=(User) request.getSession().getAttribute("user");
+                    %>
+                        <a href="#" class="d-block"><%=u.getName()%></a>
                 </div>
             </div>
-
 
             <!-- 侧边导航栏 -->
             <nav class="mt-2">
@@ -62,7 +65,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href=" ../page/client/person/message.jsp" class="nav-link">
+                                <a href=" ../servlet/MessageController" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>收信箱</p>
                                 </a>
@@ -70,7 +73,7 @@
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href=" ../page/client/person/modification.jsp" class="nav-link active">
+                                <a href="#" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>修改信息</p>
                                 </a>
@@ -86,13 +89,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item active">
-                                <a href=" ../page/client/shop/equipment.jsp" class="nav-link">
+                                <a href="../servlet/EquipmentController" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>租借器材</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href=" ../page/client/shop/venue.jsp" class="nav-link">
+                                <a href="../servlet/VenueController" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>租借场地</p>
                                 </a>
@@ -108,7 +111,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href=" ../page/client/order/client_order.jsp" class="nav-link">
+                                <a href="../servlet/OrderController" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>所有订单</p>
                                 </a>
@@ -134,9 +137,9 @@
                                         <form action="#" class="mo_form">
                                             <br><br>
                                             <h2 class="from_title">我的信息</h2><br>
-                                            <h5>用户名： cs</h5><br>
-                                            <h5>我的名称： 张少威</h5><br>
-                                            <h5>手机号： 13713713713</h5><br>
+                                            <h5>用户名：<%=u.getId()%></h5><br>
+                                            <h5>我的姓名:<%=u.getName()%></h5><br>
+                                            <h5>手机号： <%=u.getNumber()%></h5><br>
                                             <input id="p" name="p1" type="submit" class="btn btn-primary" value="修改信息" data-dismiss="modal" data-toggle="modal" data-target="#myModal9">
                                         </form>
                                 </div>
@@ -152,24 +155,22 @@
                             <h2 class="modal-title" id="myModalLabel">修改信息</h2>
                         </div>
                         <div class="modal-body">
-                            <form action="#" >
-                                <h5>用户名： sc</h5><br>
-                                <h5>我的名称：</h5>
-                                <input type="text" id="name" placeholder="张少威">
+                            <form action="../servlet/UserController" >
+                                <h5>用户名：<input  name="user_id" type="text" readonly unselectable="on" value="<%=u.getId()%>" style= "background-color:transparent;border:0;width: 50px"></h5><br>
+                                <h5>我的名称：<input  name="user_name" type="text" readonly unselectable="on" value="<%=u.getName()%>" style= "background-color:transparent;border:0;width: 50px"></h5>
                                 <br><br>
-                                <h5>手机号：</h5>
-                                <input type="text" id="numm" placeholder="13713713713">
+                                <h5>手机号：<input  name="user_number" type="text" readonly unselectable="on" value="<%=u.getNumber()%>" style= "background-color:transparent;border:0;width: 50px"></h5>
                                 <br><br>
                                 <h5>修改密码：</h5>
-                                <input type="password" id="pwd1" placeholder="请输入新密码">
+                                <input type="password" name="password1" placeholder="请输入新密码">
                                 <br><br>
                                 <h5>确认密码：</h5>
-                                <input type="password" id="pwd2" placeholder="请重复新密码">
-                            </form>
+                                <input type="password" name="password2" placeholder="请重复新密码">
+<%--                            </form>--%>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                            <input id="p" name="p1" type="submit" class="btn btn-primary" value="确定" data-dismiss="modal" data-toggle="modal" data-target="#myModal1">
+                            <input name="p1" type="submit" class="btn btn-primary" value="确定" data-dismiss="modal" data-toggle="modal" data-target="#myModal1">
                         </div>
                     </div>
                 </div>
@@ -178,11 +179,13 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h2 class="modal-title" id="myModalLabel">修改信息成功！</h2>
+                            <h2 class="modal-title"><td> <div style="color:black; align:center;">请点击下方确定查看结果</div> </td> </h2>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+<%--                            <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>--%>
+                         <input name="ok2" type="submit" class="btn btn-primary" value="确定" >
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>

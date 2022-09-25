@@ -1,6 +1,7 @@
 package cn.njust.controller.Customer;
 
 import cn.njust.Service.Customer.RegisterService;
+import cn.njust.Service.Customer.ReuserService;
 import cn.njust.Service.Login.LoginService;
 
 import cn.njust.entity.User;
@@ -16,26 +17,28 @@ public class LoginController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         PrintWriter out = response.getWriter();
-
         String name_sub = request.getParameter("name_sub");
         String name=request.getParameter("name");
         String pwd1=request.getParameter("pwd1");
         String pwd2=request.getParameter("pwd2");
         String phone=request.getParameter("phone");
         String pwd=request.getParameter("pwd");
-
         String sub=request.getParameter("sub");
         String login=request.getParameter("login");
+        String user_id=request.getParameter("user_id");
+        String user_name=request.getParameter("user_name");
+        String number=request.getParameter("user_number");
+        String password1=request.getParameter("password1");
+        String password2=request.getParameter("password2");
+
 
         if(sub!=null)
         {
-            System.out.println("sub");
             RegisterService rg = new RegisterService();
             String Rg_result = rg.registerNew(name_sub,phone,pwd1,pwd2);
             request.getSession().setAttribute("message", Rg_result);
             request.getRequestDispatcher("../page/main.jsp").forward(request, response);
-            System.out.println(Rg_result);
-
+           // System.out.println(Rg_result);
             //返回 3 代表手机号错误或已被注册
             //返回 2 代表有空空值
             //返回 1 代表两次密码不一致
@@ -43,7 +46,6 @@ public class LoginController extends HttpServlet {
             //检验两次密码是否一致
             //测试
         }
-
         if(login!=null)
         {
             if(name.equals("Admin")&&pwd.equals("Admin"))
@@ -66,17 +68,6 @@ public class LoginController extends HttpServlet {
             };
         }
 
-
-        out.println("<HTML>");
-        out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
-        out.println("  <BODY>");
-        out.print("    This is ");
-        out.print(this.getClass());
-        out.println(", using the GET method");
-        out.println("  </BODY>");
-        out.println("</HTML>");
-        out.flush();
-        out.close();
 
 
     }

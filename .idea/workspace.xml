@@ -9,20 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5de2a841-ecdd-45aa-906e-37c66a557529" name="变更" comment="更新管理员器材管理">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Admin/VenueService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/njust/controller/Admin/VenueController_ad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/page/administrator/shop/venue.jsp" afterDir="false" />
+    <list default="true" id="5de2a841-ecdd-45aa-906e-37c66a557529" name="变更" comment="更新管理员场地管理">
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/njust/controller/Customer/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Admin/ViewAllService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Admin/ViewAllService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/dao/VenueDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/dao/VenueDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/entity/Venue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/entity/Venue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Customer/RepairService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Customer/ReuserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/controller/Customer/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/controller/Customer/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/administrator/count/allCount.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/administrator/count/allCount.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/administrator/order/allOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/administrator/order/allOrder.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/administrator/shop/equipment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/administrator/shop/equipment.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/administrator/shop/venue .jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/welcome_ad.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/welcome_ad.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client/order/client_order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client/order/client_order.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client/person/message.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client/person/message.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client/person/modification.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client/person/modification.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client/shop/equipment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client/shop/equipment.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client/shop/venue.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client/shop/venue.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/welcome.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -407,7 +406,8 @@
       <workItem from="1664074166986" duration="9103000" />
       <workItem from="1664093771792" duration="9504000" />
       <workItem from="1664103407154" duration="3231000" />
-      <workItem from="1664107337960" duration="329000" />
+      <workItem from="1664107337960" duration="417000" />
+      <workItem from="1664113711125" duration="4188000" />
     </task>
     <task id="LOCAL-00001" summary="登录功能改变">
       <created>1663858811786</created>
@@ -556,7 +556,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664103080211</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="更新管理员场地管理">
+      <created>1664107748462</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1664107748462</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,7 +597,8 @@
     <MESSAGE value="更新顾客信息服务，管理员账号管理" />
     <MESSAGE value="更新管理员账号、器材管理" />
     <MESSAGE value="更新管理员器材管理" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新管理员器材管理" />
+    <MESSAGE value="更新管理员场地管理" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新管理员场地管理" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
