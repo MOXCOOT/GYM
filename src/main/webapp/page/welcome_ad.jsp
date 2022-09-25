@@ -118,7 +118,7 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../page/administrator/shop/venue.jsp" class="nav-link">
+                <a href="../servlet/VenueController_ad" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>场地管理</p>
                 </a>

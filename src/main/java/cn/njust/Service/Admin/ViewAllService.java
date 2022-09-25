@@ -3,6 +3,7 @@ package cn.njust.Service.Admin;
 import cn.njust.dao.EquipmentDao;
 import cn.njust.dao.OrderDao;
 import cn.njust.dao.UserDao;
+import cn.njust.dao.VenueDao;
 import cn.njust.entity.*;
 
 import java.sql.Date;
@@ -17,7 +18,8 @@ public class ViewAllService {
     }
     public List<Venue> viewVenue()
     {
-        return null;
+        List<Venue> lisvenue= VenueDao.findAllVenue();
+        return lisvenue;
     }
     public List<Order> viewOrder()
     {

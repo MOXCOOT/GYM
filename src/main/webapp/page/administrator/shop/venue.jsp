@@ -1,3 +1,5 @@
+<%@ page import="cn.njust.entity.Venue" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--<%@ page import=""@%>--%>
 <html lang="en">
@@ -5,11 +7,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>体育馆管理系统 | 我的首页</title>
-    <link rel="stylesheet" href="../../../css/all.min.css">
-    <link rel="stylesheet" href="../../../css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="../../../css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="../../../css/buttons.bootstrap4.min.css">
-    <link rel="stylesheet" href="../../../css/adminlte.min.css">
+    <link rel="stylesheet" href=" ../css/all.min.css">
+    <link rel="stylesheet" href=" ../css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href=" ../css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href=" ../css/buttons.bootstrap4.min.css">
+    <link rel="stylesheet" href=" ../css/adminlte.min.css">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper" >
@@ -44,7 +46,7 @@
                     <img src="../img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">张少威</a>
+                    <a href="#" class="d-block">管理员</a>
                 </div>
             </div>
 
@@ -61,7 +63,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../../../page/administrator/count/allCount.jsp" class="nav-link">
+                                <a href=" ../servlet/CountController" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>所有账号</p>
                                 </a>
@@ -77,7 +79,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../../../page/administrator/order/allOrder.jsp" class="nav-link">
+                                <a href="../servlet/OrderController_ad" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>所有订单</p>
                                 </a>
@@ -85,7 +87,7 @@
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../../../page/administrator/order/exam.jsp" class="nav-link">
+                                <a href=" ../page/administrator/order/exam.jsp" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>审核订单</p>
                                 </a>
@@ -93,7 +95,7 @@
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../../../page/administrator/order/hurry.jsp" class="nav-link">
+                                <a href=" ../page/administrator/order/hurry.jsp" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>催促订单</p>
                                 </a>
@@ -109,7 +111,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../../../page/administrator/shop/equipment.jsp" class="nav-link">
+                                <a href="../servlet/EquipmentController_ad" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>器材管理</p>
                                 </a>
@@ -117,7 +119,7 @@
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../../../page/administrator/shop/venue.jsp" class="nav-link active">
+                                <a href="#" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>场地管理</p>
                                 </a>
@@ -138,7 +140,7 @@
                     </div>
                     <div class="col-sm-5">
                     </div>
-                    <input id="p" name="p1" type="submit" class="btn btn-primary" value="新增场地" data-dismiss="modal" data-toggle="modal" data-target="#myModal_new">
+                    <input  name="p1" type="submit" class="btn btn-primary" value="新增场地" data-dismiss="modal" data-toggle="modal" data-target="#myModal_new">
                 </div>
             </div>
             <%--新增模态框--%>
@@ -146,29 +148,29 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h2 class="modal-title" id="myModalLabel">新增场地</h2>
+                            <h2 class="modal-title" >新增场地</h2>
                         </div>
                         <div class="modal-body">
-                            <form action="#" >
+                            <form action="../servlet/VenueController_ad" >
                                 <h5>场地名称：</h5>
-                                <input type="text" class="form-control" id="name" placeholder="请输入场地名称">
+                                <input name="vname" type="text" class="form-control" id="name" placeholder="请输入场地名称">
                                 <br><br>
                                 <h5>项目：</h5>
-                                <input type="text" id="numm" placeholder="请输入项目">
+                                <input name="vtype" type="text" id="type" placeholder="请输入项目">
                                 <br><br>
                                 <h5>金额：</h5>
-                                <input type="text" id="price" placeholder="请输入金额">
+                                <input name="vprice" type="text" id="price" placeholder="请输入金额">
                                 <br><br>
                                 <h5>状态：</h5>
-                                <select>
+                                <select name="vstate">
                                     <option>可预约</option>
                                     <option>不可预约</option>
                                 </select>
-                            </form>
+<%--                            </form>--%>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                            <input id="p" name="p1" type="submit" class="btn btn-primary" value="确定" data-dismiss="modal" data-toggle="modal" data-target="#myModal0">
+                            <input name="ok1" type="submit" class="btn btn-primary" value="确定" data-dismiss="modal" data-toggle="modal" data-target="#myModal0">
                         </div>
                     </div>
                 </div>
@@ -178,11 +180,12 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h2 class="modal-title" id="myModalLabel">新增场地成功！</h2>
+                            <h2 class="modal-title">新增场地成功！</h2>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                            <input name="ok2" type="submit" class="btn btn-primary" value="确定" >
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -210,63 +213,70 @@
                                     <tbody>
 
                                     <!-- 此处插入c标签 -->
+                                    <%
+                                        List<Venue> listVenue=(List<Venue>) request.getAttribute("venueList");
+                                        if(listVenue!=null)
+                                        {
+                                            for(Venue i:listVenue)
+                                            {
+                                    %>
 
 
 
                                     <tr>
-                                        <td>10086</td>
-                                        <td>篮球场</td>
-                                        <td>篮球</td>
-                                        <td>20</td>
-                                        <td>可预约</td>
-                                        <td><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">修改</button></td>
+                                        <td><%=i.getId()%></td>
+                                        <td><%=i.getName()%></td>
+                                        <td><%=i.getType()%></td>
+                                        <td><%=i.getPrice()%></td>
+                                        <td><%=i.getState()%></td>
+                                        <td><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal<%=i.getId()%>">修改</button></td>
                                         <%--修改模态框--%>
-                                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="myModal<%=i.getId()%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h2 class="modal-title" id="myModalLabel">修改场地</h2>
+                                                        <h2 class="modal-title" id="myModalLabel2">修改场地</h2>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form action="#" >
-                                                            <h5>器材编号： 10086</h5><br><br>
-                                                            <h5>器材名称：</h5>
-                                                            <input type="text" class="form-control" id="name" placeholder="篮球场">
-                                                            <br><br>
-                                                            <h5>项目：</h5>
-                                                            <input type="text" id="numm" placeholder="篮球">
-                                                            <br><br>
-                                                            <h5>金额：</h5>
-                                                            <input type="text" id="price" placeholder="20">
+                                                        <form action="../servlet/VenueController_ad" >
+                                                            <h5>场地编号：<input  name="veid" type="text" readonly unselectable="on" value="<%=i.getId()%>" style= "background-color:transparent;border:0;width: 90px"></h5><br><br>
+                                                            <h5>场地名称：<input  name="vename" type="text" readonly unselectable="on" value="<%=i.getName()%>" style= "background-color:transparent;border:0;width: 90px"></h5><br><br>
+                                                            <h5>项目：<input  name="vetype" type="text" readonly unselectable="on" value="<%=i.getType()%>" style= "background-color:transparent;border:0;width: 90px"></h5><br><br>
+                                                            <h5>金额：<input type="text" name="veprice">
                                                             <br><br>
                                                             <h5>状态：</h5>
-                                                            <select>
+                                                            <select name="vestate">
                                                                 <option>可预约</option>
                                                                 <option>不可预约</option>
                                                             </select>
-                                                        </form>
+<%--                                                        </form>--%>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                                                        <input id="p" name="p1" type="submit" class="btn btn-primary" value="确定" data-dismiss="modal" data-toggle="modal" data-target="#myModal1">
+                                                        <input name="p1" type="submit" class="btn btn-primary" value="确定" data-dismiss="modal" data-toggle="modal" data-target="#myModal<%=i.getId()%>myModal">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <%--修改提示信息--%>
-                                        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="myModal<%=i.getId()%>myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h2 class="modal-title" id="myModalLabel">修改成功！</h2>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                                                        <input name="p2" type="submit" class="btn btn-primary" value="确定" >
                                                     </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
                                     </tr>
+                                    <%
+                                            }
+                                        }
+                                    %>
 
 
                                     </tbody>
@@ -296,22 +306,22 @@
     </footer>
 </div>
 
-<script src="../../../js/jquery.min.js"></script>
-<script src="../../../js/bootstrap.bundle.min.js"></script>
-<script src="../../../js/jquery.dataTables.min.js"></script>
-<script src="../../../js/dataTables.bootstrap4.min.js"></script>
-<script src="../../../js/dataTables.responsive.min.js"></script>
-<script src="../../../js/responsive.bootstrap4.min.js"></script>
-<script src="../../../js/dataTables.buttons.min.js"></script>
-<script src="../../../js/buttons.bootstrap4.min.js"></script>
-<script src="../../../js/jszip.min.js"></script>
-<script src="../../../js/pdfmake.min.js"></script>
-<script src="../../../js/vfs_fonts.js"></script>
-<script src="../../../js/buttons.html5.min.js"></script>
-<script src="../../../js/buttons.print.min.js"></script>
-<script src="../../../js/buttons.colVis.min.js"></script>
-<script src="../../../js/adminlte.min.js"></script>
-<script src="../../../js/demo.js"></script>
+<script src=" ../js/jquery.min.js"></script>
+<script src=" ../js/bootstrap.bundle.min.js"></script>
+<script src=" ../js/jquery.dataTables.min.js"></script>
+<script src=" ../js/dataTables.bootstrap4.min.js"></script>
+<script src=" ../js/dataTables.responsive.min.js"></script>
+<script src=" ../js/responsive.bootstrap4.min.js"></script>
+<script src=" ../js/dataTables.buttons.min.js"></script>
+<script src=" ../js/buttons.bootstrap4.min.js"></script>
+<script src=" ../js/jszip.min.js"></script>
+<script src=" ../js/pdfmake.min.js"></script>
+<script src=" ../js/vfs_fonts.js"></script>
+<script src=" ../js/buttons.html5.min.js"></script>
+<script src=" ../js/buttons.print.min.js"></script>
+<script src=" ../js/buttons.colVis.min.js"></script>
+<script src=" ../js/adminlte.min.js"></script>
+<script src=" ../js/demo.js"></script>
 <script>
     $(function () {
         $("#example1").DataTable({

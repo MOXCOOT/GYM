@@ -119,7 +119,7 @@
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href=" ../page/administrator/shop/venue.jsp" class="nav-link">
+                                <a href=" ../servlet/VenueController_ad" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>场地管理</p>
                                 </a>
@@ -244,7 +244,7 @@
                                                         <form action="../servlet/EquipmentController_ad" >
                                                             <h5>器材编号：<input  name="eqid" type="text" readonly unselectable="on" value="<%=i.getId()%>" style= "background-color:transparent;border:0;width: 90px"></h5><br><br>
                                                             <h5>器材名称：<input  name="eqname" type="text" readonly unselectable="on" value="<%=i.getName()%>" style= "background-color:transparent;border:0;width: 90px"></h5><br><br>
-                                                            <h5>器材名称：<input  name="eqtype" type="text" readonly unselectable="on" value="<%=i.getType()%>" style= "background-color:transparent;border:0;width: 90px"></h5><br><br>
+                                                            <h5>器材项目：<input  name="eqtype" type="text" readonly unselectable="on" value="<%=i.getType()%>" style= "background-color:transparent;border:0;width: 90px"></h5><br><br>
                                                             <h5>余量：</h5>
                                                             <input type="text" name="eqnumber">
                                                             <br><br>

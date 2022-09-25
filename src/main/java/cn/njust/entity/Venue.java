@@ -1,11 +1,12 @@
 package cn.njust.entity;
 
 public class Venue {
+
     private String id;
     private String name;
     private String type;
     private int price;
-    private int state;
+    private String state;
 
     public String getId() {
         return id;
@@ -39,11 +40,19 @@ public class Venue {
         this.price = price;
     }
 
-    public int getState() {
+    public String getState() {
         return state;
     }
 
-    public void setState(int state) {
+    public void setState(String state) {
         this.state = state;
     }
+    public Venue(String id, String name, String type, int price, String state) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.price = price;
+        this.state = state;
+    }
+    public Venue(){}
 }

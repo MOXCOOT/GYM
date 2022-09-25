@@ -1,6 +1,7 @@
 package cn.njust.dao;
 
 import cn.njust.Service.Customer.RentService;
+import cn.njust.entity.Venue;
 import cn.njust.entity.Order;
 import cn.njust.entity.User;
 import cn.njust.entity.Venue;
@@ -33,7 +34,7 @@ public class VenueDao extends BaseDao{
             j.setType(i.get("venue_type").toString());
             j.setName(i.get("venue_name").toString());
             j.setPrice(Integer.parseInt(i.get("venue_price").toString()));
-            j.setState(Integer.parseInt(i.get("venue_state").toString()));
+            j.setState(i.get("venue_state").toString());
             venues.add(j);
 
         }
@@ -87,10 +88,43 @@ public class VenueDao extends BaseDao{
             return sum;
         }
     }
-   /* public static void main(String[] args){
-        VenueDao.findPriceByType("'足球'");
+
+    public static Venue findVenueByVenueId(String vid)
+    {
+        String sql = "select * from venue where venue_id=" +vid;
+        try {
+            List<Map<String, Object>> lis = DBUtil.query(sql);
+            if(lis.isEmpty()) return null;
+            else
+            {
+                Map<String, Object> ma=lis.get(0);
+                return new Venue(ma.get("venue_id").toString(),ma.get("venue_name").toString(),ma.get("venue_type").toString(),Integer.parseInt(ma.get("venue_price").toString()),ma.get("venue_state").toString());
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
-*/
+
+    public static void insertVenue(Venue venue) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("venue_name",venue.getName());
+        map.put("venue_id", venue.getId());
+        map.put("venue_price",venue.getPrice() );
+        map.put("venue_state",venue.getState() );
+        map.put("venue_type",venue.getType() );
+        try {
+            DBUtil.insert("venue",map);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+//   public static void main(String[] args){
+//        Venue x=new Venue("931","54","48",2,"8");
+//        VenueDao.updateVenue(x);
+//
+//    }
+
 
    /* public VenueDao findVenue(Venue venue)
     {
