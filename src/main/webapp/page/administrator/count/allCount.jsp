@@ -21,10 +21,10 @@
         <!-- 头部左侧按钮 -->
         <ul class="navbar-nav">
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="../../welcome_ad.jsp" class="nav-link">返回首页</a>
+                <a href="../page/welcome_ad.jsp" class="nav-link">返回首页</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href=" ../../login.jsp" class="nav-link">退出登录</a>
+                <a href=" ../page/login.jsp" class="nav-link">退出登录</a>
             </li>
         </ul>
     </nav>
@@ -32,7 +32,7 @@
     <!-- 侧边栏容器 -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- 侧边栏logo -->
-        <a href=" ../../welcome_ad.jsp" class="brand-link">
+        <a href=" ../page/welcome_ad.jsp" class="brand-link">
             <img src=" ../img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
             <span class="brand-text font-weight-light">体育馆管理系统</span>
         </a>

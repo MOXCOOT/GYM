@@ -1,8 +1,7 @@
 package cn.njust.controller.Admin;
 
 import cn.njust.Service.Admin.ViewAllService;
-import cn.njust.Service.Customer.LogoutService;
-import cn.njust.Service.Customer.RentService;
+import cn.njust.Service.Admin.LogoutService;
 import cn.njust.entity.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -11,7 +10,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet(name = "CountController", value = "/CountController")
 public class CountController extends HttpServlet {

@@ -8,9 +8,9 @@ public class Equipment {
     private String type;
     private int number;
     private int price;
-    private int state;
+    private String state;
 
-    public Equipment(String id, String name, String type, int number, int price, int state) {
+    public Equipment(String id, String name, String type, int number, int price, String state) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -59,11 +59,11 @@ public class Equipment {
         this.price = price;
     }
 
-    public int getState() {
+    public String getState() {
         return state;
     }
 
-    public void setState(int state) {
+    public void setState(String state) {
         this.state = state;
     }
 }

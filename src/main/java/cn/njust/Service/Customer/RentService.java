@@ -38,7 +38,7 @@ public class RentService {
         }
         while(false);//查找数据库检验是否有重复订单号
 
-        System.out.println(dateFormat.format(date).toString());
+       // System.out.println(dateFormat.format(date).toString());
         return null;
     }
     public void venueOrder(String uId,String vname,String vId,int time)

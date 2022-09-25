@@ -1,5 +1,6 @@
 package cn.njust.Service.Admin;
 
+import cn.njust.dao.EquipmentDao;
 import cn.njust.dao.OrderDao;
 import cn.njust.dao.UserDao;
 import cn.njust.entity.*;
@@ -11,7 +12,8 @@ import java.util.List;
 public class ViewAllService {
     public List<Equipment> viewEquipment()
     {
-        return null;
+        List<Equipment> lisequipment= EquipmentDao.findAllEquipment();
+        return lisequipment;
     }
     public List<Venue> viewVenue()
     {

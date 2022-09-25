@@ -35,10 +35,10 @@ public class EquipmentDao extends BaseDao {
             j.setName(i.get("equipment_name").toString());
             j.setPrice(Integer.parseInt(i.get("equipment_price").toString()));
             j.setNumber(Integer.parseInt(i.get("equipment_number").toString()));
-            j.setState(Integer.parseInt(i.get("equipment_state").toString()));
+            j.setState((i.get("equipment_state").toString()));
             equipments.add(j);
         }
-        //System.out.println(list.get(0).get("equipment_state"));
+       // System.out.println(list.get(0).get("equipment_state"));
         return equipments;//返回器材信息
     }
 
@@ -95,7 +95,7 @@ public class EquipmentDao extends BaseDao {
             else
             {
                 Map<String, Object> ma=lis.get(0);
-                return new Equipment(ma.get("equipment_id").toString(),ma.get("equipment_name").toString(),ma.get("equipment_type").toString(),Integer.parseInt(ma.get("equipment_number").toString()),Integer.parseInt(ma.get("equipment_price").toString()),Integer.parseInt(ma.get("equipment_state").toString()));
+                return new Equipment(ma.get("equipment_id").toString(),ma.get("equipment_name").toString(),ma.get("equipment_type").toString(),Integer.parseInt(ma.get("equipment_number").toString()),Integer.parseInt(ma.get("equipment_price").toString()),ma.get("equipment_state").toString());
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -131,6 +131,26 @@ public class EquipmentDao extends BaseDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    public static String findEquipTypeById(String eid)
+    {
+        String sql = "select equipment_type from equipment where equipment_id="+ eid;
+        String sum = null;
+        try {
+            List<Map<String, Object>> lis = DBUtil.query(sql);
+            Map<String, Object> ma=lis.get(0);
+            sum= ma.get("equipment_type").toString();
+            System.out.println(sum);
+            return sum;
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+             System.out.println(sum);
+            return sum;
+        }
+
     }
 
 

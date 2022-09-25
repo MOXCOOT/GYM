@@ -1,4 +1,4 @@
-package cn.njust.Service.Customer;
+package cn.njust.Service.Admin;
 
 import cn.njust.dao.UserDao;
 

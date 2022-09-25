@@ -35,11 +35,11 @@ public class ViewService {
     public List<Message> viewMessage(String uid)
     {
         List<Order> lisorder = OrderDao.findAllOrderByUserid(uid);
-        for(Order i:lisorder)
-        {
-            if (!i.getState().equals("已逾期"))
-                return null;
-        }
+//        for(Order i:lisorder)
+//        {
+//            if (!i.getState().equals("已逾期"))
+//                return null;
+//        }
         return MessageDao.findAllMessageByUserid(uid);
     }
 //    public static void main(String[] args){
