@@ -26,4 +26,15 @@ public class EquipmentService {
         Equipment eq=new Equipment(eid,ename,etype,enumber,eprice,estate);
         EquipmentDao.insertEquipment(eq);
     }
+
+    public void updateEquipment(String ename,String etype,int enumber,int eprice,String estate,String eid)
+    {
+        Equipment eq=new Equipment(eid,ename,etype,enumber,eprice,estate);
+        EquipmentDao.updateEquipment(eq);
+    }
+    public void deleteEquipment(String eid)
+    {
+        EquipmentDao.deleteEquipmentById(eid);
+    }
+
 }

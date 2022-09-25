@@ -56,9 +56,9 @@ public class EquipmentDao extends BaseDao {
     /**
      *   输入equipment,实现器材信息删除
      */
-    public static void deleteEquipmentById(Equipment equipment) {
+    public static void deleteEquipmentById(String eid) {
         Map<String, Object> whereMap = new HashMap<>();
-        whereMap.put("equipment_id", equipment.getId());//根据id寻找进而删除
+        whereMap.put("equipment_id",eid);//根据id寻找进而删除
         try {
             int count = DBUtil.delete("equipment", whereMap);
         } catch (SQLException e) {
@@ -104,7 +104,7 @@ public class EquipmentDao extends BaseDao {
     }
     public static void updateEquipment(Equipment equipment) {
         Map<String, Object> map = new HashMap<>();
-        map.put("equipment_number",equipment.getNumber()-1 );//更新数量
+        map.put("equipment_number",equipment.getNumber() );//更新数量
         map.put("equipment_price",equipment.getPrice() );//更新价格
         map.put("equipment_state",equipment.getState() );//更新状态
         Map<String, Object> whereMap = new HashMap<>();
@@ -132,7 +132,7 @@ public class EquipmentDao extends BaseDao {
             e.printStackTrace();
         }
     }
-    public static String findEquipTypeById(String eid)
+   /* public static String findEquipTypeById(String eid)
     {
         String sql = "select equipment_type from equipment where equipment_id="+ eid;
         String sum = null;
@@ -151,7 +151,7 @@ public class EquipmentDao extends BaseDao {
             return sum;
         }
 
-    }
+    }*/
 
 
    /* public Equipment findEquipment(Equipment equipment) {

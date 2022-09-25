@@ -151,12 +151,12 @@
                             <h2 class="modal-title" >新增器材</h2>
                         </div>
                         <div class="modal-body">
-                            <form action="../servlet/EquipmentController_ad" >
+                         <form action="../servlet/EquipmentController_ad" >
                                 <h5>器材名称：</h5>
                                 <input name="ename" type="text" class="form-control" id="name" placeholder="请输入器材名称">
                                 <br><br>
                                 <h5>器材项目：</h5>
-                                <input name="etype" type="text" class="form-control" id="name" placeholder="请输入器材项目">
+                                <input name="etype" type="text" class="form-control" id="type" placeholder="请输入器材项目">
                                 <br><br>
                                 <h5>余量：</h5>
                                 <input name="enumber" type="text" id="numm" placeholder="请输入余量">
@@ -173,19 +173,20 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                            <input  name="p1" type="submit" class="btn btn-primary" value="确定" data-dismiss="modal" data-toggle="modal" data-target="#myModal0">
+                            <input  name="ok1" type="submit" class="btn btn-primary" value="确定" data-dismiss="modal" data-toggle="modal" data-target="#myModal0">
                         </div>
                     </div>
                 </div>
             </div>
             <%--确认新增--%>
-            <div class="modal fade" id="myModal0" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade" id="myModalmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h2 class="modal-title" >新增器材成功！</h2>
                         </div>
                         <div class="modal-footer">
+<%--                            <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>--%>
                             <input name="ok2" type="submit" class="btn btn-primary" value="确定" >
                         </div>
                         </form>
@@ -225,75 +226,76 @@
                                             {
                                     %>
 
-
                                     <tr>
                                         <td><%=i.getId()%></td>
                                         <td><%=i.getName()%></td>
                                         <td><%=i.getNumber()%></td>
                                         <td><%=i.getPrice()%></td>
                                         <td><%=i.getState()%></td>
-                                        <td><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">修改</button></td>
+                                        <td><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal<%=i.getId()%>">修改</button></td>
                                         <%--修改模态框--%>
-                                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="myModal<%=i.getId()%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h2 class="modal-title" id="myModalLabel">修改器材</h2>
+                                                        <h2 class="modal-title" id="myModalLabel2">修改器材</h2>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form action="#" >
-                                                            <h5>器材编号： 10086</h5><br><br>
-                                                            <h5>器材名称：</h5>
-                                                            <input type="text" class="form-control" id="name" placeholder="羽毛球拍一副">
-                                                            <br><br>
+                                                        <form action="../servlet/EquipmentController_ad" >
+                                                            <h5>器材编号：<input  name="eqid" type="text" readonly unselectable="on" value="<%=i.getId()%>" style= "background-color:transparent;border:0;width: 90px"></h5><br><br>
+                                                            <h5>器材名称：<input  name="eqname" type="text" readonly unselectable="on" value="<%=i.getName()%>" style= "background-color:transparent;border:0;width: 90px"></h5><br><br>
+                                                            <h5>器材名称：<input  name="eqtype" type="text" readonly unselectable="on" value="<%=i.getType()%>" style= "background-color:transparent;border:0;width: 90px"></h5><br><br>
                                                             <h5>余量：</h5>
-                                                            <input type="text" id="numm" placeholder="99">
+                                                            <input type="text" name="eqnumber">
                                                             <br><br>
                                                             <h5>金额：</h5>
-                                                            <input type="text" id="price" placeholder="20">
+                                                            <input type="text" name="eqprice" >
                                                             <br><br>
                                                             <h5>状态：</h5>
-                                                            <select>
+                                                            <select name="eqstate">
                                                                 <option>可租赁</option>
                                                                 <option>不可租赁</option>
                                                             </select>
-                                                        </form>
+<%--                                                        </form>--%>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <input id="p" name="p1" type="submit" class="btn btn-primary" value="确定" data-dismiss="modal" data-toggle="modal" data-target="#myModal1">
+                                                        <input  name="p1" type="submit" class="btn btn-primary" value="确定" data-dismiss="modal" data-toggle="modal" data-target="#myModal<%=i.getId()%>myModal">
                                                         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                                                        <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#myModal2">删除器材</button>
+                                                        <input  name="d1" type="submit" class="btn btn-danger" value="删除器材" data-dismiss="modal" data-toggle="modal" data-target="#myModal123456<%=i.getId()%>myModal">
+<%--                                                        <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#myModal2">删除器材</button>--%>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <%--修改提示信息--%>
-                                        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="myModal<%=i.getId()%>myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h2 class="modal-title" id="myModalLabel">修改成功！</h2>
+                                                        <h2 class="modal-title">修改成功！</h2>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                                                        <input name="p2" type="submit" class="btn btn-primary" value="确定" >
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <%--确认删除--%>
-                                        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="myModal123456<%=i.getId()%>myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h2 class="modal-title" id="myModalLabel">确定删除该器材吗？<br>删除后将无法恢复！</h2>
+                                                        <h2 class="modal-title" id="myModalLabel>">确定删除器材<input  name="e_id" type="text" readonly unselectable="on" value="<%=i.getId()%>" style= "background-color:transparent;border:0;width: 120px">吗？<br>删除后将无法恢复！</h2>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
-                                                        <input id="p" name="p" type="submit" class="btn btn-danger" value="确定" data-dismiss="modal">
+                                                        <input name="d2" type="submit" class="btn btn-primary" value="确定" >
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        </form>
+
                                     </tr>
                                     <%
                                             }

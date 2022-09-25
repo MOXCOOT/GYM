@@ -99,7 +99,8 @@ public class RentService {
         Order or = new Order(oid,eName,eId,uId, Timestamp.valueOf(simpleDateFormat.format(t1)),Timestamp.valueOf(simpleDateFormat.format(t2)),sum,"未审核");
         OrderDao.insertOrder(or);
         Equipment eq=EquipmentDao.findEquipmentByEquipmentId(eId);
-        EquipmentDao.updateEquipment(eq);
+        Equipment eq2=new Equipment(eq.getId(),eq.getName(),eq.getType(),eq.getNumber()-1,eq.getPrice(),eq.getState());
+        EquipmentDao.updateEquipment(eq2);
     }
    /* public static void main(String[] args){
         RentService t=new RentService();

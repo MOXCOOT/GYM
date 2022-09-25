@@ -109,7 +109,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href=" ../page/administrator/shop/equipment.jsp" class="nav-link">
+                                <a href=" ../servlet/EquipmentController_ad" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>器材管理</p>
                                 </a>
