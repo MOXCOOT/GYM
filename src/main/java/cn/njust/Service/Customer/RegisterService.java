@@ -36,7 +36,7 @@ public class RegisterService {
             }
             uid = stringBuffer.toString();
 
-            System.out.println(uid);
+          //  System.out.println(uid);
 
             newid.setId(uid);
         }

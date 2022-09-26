@@ -155,7 +155,6 @@
                                     <!-- 此处插入c标签 -->
                                     <%
                                         List<Message> listMessage=(List<Message>) request.getAttribute("messageList");
-                                      //  System.out.println(listMessage);
                                         if(listMessage!=null)
                                         {
                                             for(Message i:listMessage)
@@ -220,7 +219,7 @@
         $('#example2').DataTable({
             "paging": true,
             "lengthChange": false,
-            "searching": false,
+            "searching": true,
             "ordering": true,
             "info": true,
             "autoWidth": false,

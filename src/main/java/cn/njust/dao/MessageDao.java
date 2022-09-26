@@ -69,10 +69,6 @@ public class MessageDao {
 
     public static void insertMessage(Message message){
         Map<String, Object> map = new HashMap<>();
-        Date date = new Date(System.currentTimeMillis());//获取当前时间戳
-        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Timestamp t = new Timestamp(date.getTime());
-        message.setTime(Timestamp.valueOf(simpleDateFormat.format(t)));
         map.put("user_id",message.getUid());
         map.put("message_id", message.getId());
         map.put("message_time",message.getTime() );
@@ -84,9 +80,9 @@ public class MessageDao {
         }
     }
 
-    public static void deleteMessageById(Message message) {
+    public static void deleteMessageByOrderId(String oid) {
         Map<String, Object> whereMap = new HashMap<>();
-        whereMap.put("message_id", message.getId());//根据消息id寻找进而删除
+        whereMap.put("message_id", oid);//根据消息id寻找进而删除
         try {
             int count = DBUtil.delete("message", whereMap);
         } catch (SQLException e) {
@@ -94,6 +90,35 @@ public class MessageDao {
         }
     }
 
+    public static void deleteMessageByTime(Timestamp t) {
+        Map<String, Object> whereMap = new HashMap<>();
+        whereMap.put("message_message", t);
+        try {
+            int count = DBUtil.delete("message", whereMap);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public static Message findMessageByMessageId(String mid)
+    {
+        String sql = "select * from message where message_id=" +mid;
+        try {
+            List<Map<String, Object>> lis = DBUtil.query(sql);
+            if(lis.isEmpty()) return null;
+            else
+            {
+
+                Map<String, Object> ma=lis.get(0);
+                Message or = new Message(ma.get("user_id").toString(),ma.get("order_id").toString(),Timestamp.valueOf(ma.get("message_time").toString()), mid);
+                return or;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 /*
  *测试
  */

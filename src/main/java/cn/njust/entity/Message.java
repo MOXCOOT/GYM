@@ -25,11 +25,6 @@ public class Message {
         this.oid = oid;
     }
 
-   /* public String transfer(String format) {
-        SimpleDateFormat sdf = new SimpleDateFormat(format);
-        return sdf.format(time);
-    }*/
-
     public String getId() {
         return id;
     }
@@ -46,4 +41,11 @@ public class Message {
     public void setTime(Timestamp time) {
         this.time = time;
     }
+    public Message(String uid, String oid, Timestamp time, String id) {
+        this.uid = uid;
+        this.oid = oid;
+        this.time = time;
+        this.id = id;
+    }
+    public Message(){}
 }

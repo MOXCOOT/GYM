@@ -95,7 +95,7 @@
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../page/administrator/order/hurry.jsp" class="nav-link">
+                                <a href="../servlet/MessageController_ad" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>催促订单</p>
                                 </a>
@@ -165,11 +165,8 @@
 
                                     <!-- 此处插入c标签 -->
 
-
                                     <%
                                         List<Order> listOrder=(List<Order>) request.getAttribute("orderList");
-//                                        System.out.println("fedsaf");
-                                        System.out.println(listOrder);
                                         if(listOrder!=null)
                                         {
                                             for(Order i:listOrder)
