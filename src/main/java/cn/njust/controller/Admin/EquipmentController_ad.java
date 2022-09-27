@@ -31,8 +31,11 @@ public class EquipmentController_ad extends HttpServlet {
             int equipment_price = Integer.parseInt(request.getParameter("eprice"));
             String equipment_state = request.getParameter("estate");
             String equipment_type=request.getParameter("etype");
-            EquipmentService es=new EquipmentService();
-            es.addEquipment(equipment_name,equipment_type,equipment_number,equipment_price,equipment_state);
+            if(equipment_number!=0&&equipment_price!=0&&equipment_name.length()!=0&&equipment_type.length()!=0){
+                EquipmentService es=new EquipmentService();
+                es.addEquipment(equipment_name,equipment_type,equipment_number,equipment_price,equipment_state);
+            }
+            else request.getRequestDispatcher("../page/administrator/shop/equipment.jsp").forward(request, response);
         }
         if(quedingupdate!=null)
         {
@@ -42,8 +45,12 @@ public class EquipmentController_ad extends HttpServlet {
             String equip_name=request.getParameter("eqname");
             String equip_id=request.getParameter("eqid");
             String equip_type=request.getParameter("eqtype");
-            EquipmentService es2=new EquipmentService();
-            es2.updateEquipment(equip_name,equip_type,equip_number,equip_price,equip_state,equip_id);
+            if(equip_number>=0&&equip_price>0)
+            {
+                EquipmentService es2=new EquipmentService();
+                es2.updateEquipment(equip_name,equip_type,equip_number,equip_price,equip_state,equip_id);
+            }
+            else request.getRequestDispatcher("../page/administrator/shop/equipment.jsp").forward(request, response);
         }
         if(quedingdelete!=null)
         {

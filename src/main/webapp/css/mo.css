@@ -1,4 +1,13 @@
+:root{
+    --white:#e9e9e9;
+    --gray:#333;
+    --blue:#0367a6;
+    --lightblue:#008997;
 
+    --button-radius:0.7rem;
+    --max-width:758px;
+    --max-height:420px;
+}
 .modify1{
     align-items: center;
     background-color: var(--white);

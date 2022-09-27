@@ -219,6 +219,8 @@
                                         {
                                             for(Venue i:listVenue)
                                             {
+                                                if(i.getPrice()>=0)
+                                                {
                                     %>
 
 
@@ -274,6 +276,7 @@
                                         </div>
                                     </tr>
                                     <%
+                                            }
                                             }
                                         }
                                     %>

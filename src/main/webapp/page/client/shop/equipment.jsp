@@ -164,7 +164,8 @@
                                         {
                                             for(Equipment i:listEquip)
                                             {
-
+                                                if(i.getState().equals("可租赁")&&i.getNumber()>=0&&i.getPrice()>=0)
+                                                {
                                     %>
                                     <tr>
                                         <td><%=i.getId()%></td>
@@ -210,40 +211,11 @@
                                         </div>
                                     </tr>
                                     <%
+                                                }
                                             }
                                         }
                                     %>
 
-
-
-<%--                                    <tr>--%>
-<%--                                        <td>12138</td>--%>
-<%--                                        <td>羽毛球拍一副</td>--%>
-<%--                                        <td>20元/小时</td>--%>
-<%--                                        <td>100</td>--%>
-<%--                                        <td><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">租赁</button></td>--%>
-<%--                                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">--%>
-<%--                                            <div class="modal-dialog">--%>
-<%--                                                <div class="modal-content">--%>
-<%--                                                    <div class="modal-body">--%>
-<%--                                                        <form action="#">--%>
-<%--                                                            <h2 class="from_title">确认订单</h2>--%>
-<%--                                                            <h3>器材编号： 12138</h3>--%>
-<%--                                                            <h3>器材名称： 羽毛球拍一副</h3>--%>
-<%--                                                            <h3>租赁数量： <input type="text" placeholder="1" class="input"></h3>--%>
-<%--                                                        </form>--%>
-<%--                                                    </div>--%>
-<%--                                                    <div class="modal-footer">--%>
-<%--                                                        <button type="button" class="btn btn-default" data-dismiss="modal">取消--%>
-<%--                                                        </button>--%>
-<%--                                                        <button type="button" class="btn btn-primary">--%>
-<%--                                                            确定--%>
-<%--                                                        </button>--%>
-<%--                                                    </div>--%>
-<%--                                                </div>--%>
-<%--                                            </div>--%>
-<%--                                        </div>--%>
-<%--                                    </tr>--%>
                                     </tbody>
                                     <tfoot>
                                     <tr>

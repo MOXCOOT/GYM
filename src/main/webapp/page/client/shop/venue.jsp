@@ -167,7 +167,8 @@
                                         {
                                             for(Venue i:listEquip)
                                             {
-
+                                                if(i.getState().equals("可预约")&&i.getPrice()>=0)
+                                                {
                                     %>
                                     <tr>
                                         <td><%=i.getId()%></td>
@@ -219,46 +220,10 @@
 
                                     </tr>
                                     <%
+                                                }
                                             }
                                         }
                                     %>
-
-<%--                                    <tr>--%>
-<%--                                        <td>12138</td>--%>
-<%--                                        <td>篮球场</td>--%>
-<%--                                        <td>篮球</td>--%>
-<%--                                        <td>100</td>--%>
-<%--                                        <td><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">租赁</button></td>--%>
-<%--                                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">--%>
-<%--                                            <div class="modal-dialog">--%>
-<%--                                                <div class="modal-content">--%>
-<%--                                                    <div class="modal-header">--%>
-<%--                                                        <h2 class="modal-title" id="myModalLabel">确认订单</h2>--%>
-<%--                                                    </div>--%>
-<%--                                                    <div class="modal-body">--%>
-<%--                                                        <form action="#" >--%>
-
-<%--                                                            <h5>场地编号： 12138</h5><br><br>--%>
-<%--                                                            <h5>场地名称： 篮球场</h5><br><br>--%>
-<%--                                                            <h5>预约时长： <select>--%>
-<%--                                                                <option>1</option>--%>
-<%--                                                                <option>2</option>--%>
-<%--                                                                <option>3</option>--%>
-<%--                                                                <option>4</option>--%>
-<%--                                                            </select></h5>--%>
-<%--                                                        </form>--%>
-<%--                                                    </div>--%>
-<%--                                                    <div class="modal-footer">--%>
-<%--                                                        <button type="button" class="btn btn-default" data-dismiss="modal">取消--%>
-<%--                                                        </button>--%>
-<%--                                                        <button type="button" class="btn btn-primary">--%>
-<%--                                                            确定--%>
-<%--                                                        </button>--%>
-<%--                                                    </div>--%>
-<%--                                                </div>--%>
-<%--                                            </div>--%>
-<%--                                        </div>--%>
-<%--                                    </tr>--%>
 
 
                                     </tbody>

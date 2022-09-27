@@ -173,7 +173,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                            <input  name="ok1" type="submit" class="btn btn-primary" value="确定" data-dismiss="modal" data-toggle="modal" data-target="#myModal0">
+                            <input  name="ok1" type="submit" class="btn btn-primary" value="确定" data-dismiss="modal" data-toggle="modal" data-target="#myModalmodal">
                         </div>
                     </div>
                 </div>
@@ -186,7 +186,6 @@
                             <h2 class="modal-title" >新增器材成功！</h2>
                         </div>
                         <div class="modal-footer">
-<%--                            <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>--%>
                             <input name="ok2" type="submit" class="btn btn-primary" value="确定" >
                         </div>
                         </form>
@@ -224,7 +223,7 @@
                                         {
                                             for(Equipment i:listEquipment)
                                             {
-                                                if(i.getState().equals("可租赁"))
+                                                if(i.getNumber()>=0&&i.getPrice()>=0)
                                                 {
                                     %>
 
