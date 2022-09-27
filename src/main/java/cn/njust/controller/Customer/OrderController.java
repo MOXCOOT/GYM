@@ -1,6 +1,8 @@
 package cn.njust.controller.Customer;
 
+import cn.njust.Service.Customer.ReturnService;
 import cn.njust.Service.Customer.ViewService;
+import cn.njust.dao.OrderDao;
 import cn.njust.entity.User;
 
 import jakarta.servlet.*;
@@ -13,9 +15,15 @@ public class OrderController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
+        Object que=request.getParameter("return");
+        String oid=request.getParameter("order_id");
         User cus = (User) request.getSession().getAttribute("user");
+        if(que!=null)
+        {
+            ReturnService rs=new ReturnService();
+            rs.returnBack(oid);
+        }
         ViewService vs = new ViewService();
-        //System.out.println(vs.viewOrder(cus.getId()));
         request.setAttribute("orderList",vs.viewOrder(cus.getId()));
         request.getRequestDispatcher("../page/client/order/client_order.jsp").forward(request, response);
     }

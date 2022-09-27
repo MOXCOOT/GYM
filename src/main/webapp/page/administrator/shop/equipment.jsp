@@ -87,7 +87,7 @@
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href=" ../page/administrator/order/exam.jsp" class="nav-link">
+                                <a href=" ../servlet/ExamController" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>审核订单</p>
                                 </a>
@@ -224,6 +224,8 @@
                                         {
                                             for(Equipment i:listEquipment)
                                             {
+                                                if(i.getState().equals("可租赁"))
+                                                {
                                     %>
 
                                     <tr>
@@ -298,6 +300,7 @@
 
                                     </tr>
                                     <%
+                                                }
                                             }
                                         }
                                     %>

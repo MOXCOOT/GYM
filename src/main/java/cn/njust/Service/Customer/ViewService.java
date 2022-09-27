@@ -24,13 +24,13 @@ public class ViewService {
     }
     public List<Order> viewOrder(String uid)
     {
-      //  System.out.println(OrderDao.findAllOrderByUserid(uid));
         List<Order> lisorder = OrderDao.findAllOrderByUserid(uid);
         for(Order i:lisorder)
         {
             Date date = new Date(System.currentTimeMillis());
             Timestamp t = new Timestamp(date.getTime());
-            if(i.getReturnTime().before(t))
+
+            if(i.getState().equals("进行中")&&i.getReturnTime().before(t))
             {
 //                public Order(String oid, String rname, String rid, String uid, Timestamp orderTime, Timestamp returnTime, int sum, String state)
                 Order od=new Order(i.getOid(),i.getRname(),i.getRid(),i.getUid(),i.getOrderTime(),i.getReturnTime(),i.getSum(),"已逾期");

@@ -15,22 +15,16 @@ public class EquipmentController extends HttpServlet {
     {
         Object queding = request.getParameter("ok2");
         User cus = (User) request.getSession().getAttribute("user");
-       // System.out.println("hellooooo"+queding);
         if(queding!=null)
         {
             String equipment_id = request.getParameter("equipment_id");
             String equipment_name = request.getParameter("equipment_name");
             String hours =  request.getParameter("hours");
-//            System.out.println("时间"+ hours );
-//            System.out.println(equipment_id);
-//            System.out.println(equipment_name);
             RentService rs=new RentService();
             rs.equipmentOrder(cus.getId(),equipment_name,equipment_id,Integer.parseInt(hours));
         }
         ViewService vs = new ViewService();
         request.setAttribute("equipList",vs.viewEquipment());
-//        System.out.println("12313213");
-//        System.out.println(vs.viewEquipment());
         request.getRequestDispatcher("../page/client/shop/equipment.jsp").forward(request, response);
     }
 

@@ -14,6 +14,11 @@ public class ViewAllService {
     public List<Equipment> viewEquipment()
     {
         List<Equipment> lisequipment= EquipmentDao.findAllEquipment();
+        for(Equipment i:lisequipment)
+        {
+            if(i.getNumber()==0)
+                i.setState("不可租赁");
+        }
         return lisequipment;
     }
     public List<Venue> viewVenue()
@@ -28,10 +33,9 @@ public class ViewAllService {
         {
             Date date = new Date(System.currentTimeMillis());
             Timestamp t = new Timestamp(date.getTime());
-            if(i.getReturnTime().before(t))
+            if(i.getReturnTime().before(t)&&i.getState().equals("已逾期")!=false)
             {
                 i.setState("已逾期");
-
             }
         }
         return lisorder;

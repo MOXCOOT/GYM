@@ -158,6 +158,7 @@
                                         <th>归还时间</th>
                                         <th>金额（元）</th>
                                         <th>订单状态</th>
+                                        <th>操作</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -178,6 +179,28 @@
                                         <td><%=i.getReturnTime()%></td>
                                         <td><%=i.getSum()%></td>
                                         <td><%=i.getState()%></td>
+                                        <td><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal<%=i.getOid()%>">完成订单</button></td>
+                                        <div class="modal fade" id="myModal<%=i.getOid()%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h2 class="modal-title" id="myModal<%=i.getOid()%>">订单详情</h2>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="../servlet/OrderController" >
+                                                            <h5>用户ID：<input  name="user_id" type="text" readonly unselectable="on" value="<%=i.getUid()%>" style= "background-color:transparent;border:0;width: 90px"></h5><br><br>
+                                                            <h5>订单编号：<input  name="order_id" type="text" readonly unselectable="on" value="<%=i.getOid()%>" style= "background-color:transparent;border:0;width: 130px"></h5><br><br>
+                                                            <%--                                                        </form>--%>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <%--                                                        <button type="button" class="btn btn-primary" data-dismiss="modal">催促归还</button>--%>
+                                                        <input id="p" name="return" type="submit" class="btn btn-danger" value="确定归还">
+                                                    </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </tr>
                                     <%
                                             }
@@ -194,6 +217,7 @@
                                         <th>归还时间</th>
                                         <th>金额（元）</th>
                                         <th>订单状态</th>
+                                        <th>操作</th>
                                     </tr>
                                     </tfoot>
                                 </table>

@@ -9,17 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5de2a841-ecdd-45aa-906e-37c66a557529" name="变更" comment="更新客户账号信息更改">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/njust/controller/Admin/MessageController_ad.java" afterDir="false" />
+    <list default="true" id="5de2a841-ecdd-45aa-906e-37c66a557529" name="变更" comment="更新管理员订单催促功能">
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Admin/ExamService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/njust/controller/Admin/ExamController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Customer/RegisterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Customer/RegisterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Customer/RentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Customer/RentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Admin/ViewAllService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Admin/ViewAllService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Customer/ReturnService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Customer/ReturnService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Customer/ViewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Customer/ViewService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/dao/MessageDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/dao/MessageDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/dao/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/entity/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/entity/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/controller/Customer/EquipmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/controller/Customer/EquipmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/controller/Customer/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/controller/Customer/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/page/administrator/count/allCount.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/administrator/count/allCount.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/page/administrator/order/allOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/administrator/order/allOrder.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/page/administrator/order/exam.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/administrator/order/exam.jsp" afterDir="false" />
@@ -27,9 +26,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/webapp/page/administrator/shop/equipment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/administrator/shop/equipment.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/page/administrator/shop/venue.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/administrator/shop/venue.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client/order/client_order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client/order/client_order.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client/person/message.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client/person/message.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client/shop/equipment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client/shop/equipment.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client/shop/venue.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client/shop/venue.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client/venue/client_venue.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client/venue/client_venue.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/page/welcome_ad.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/welcome_ad.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -391,7 +388,9 @@
       <workItem from="1664103407154" duration="3231000" />
       <workItem from="1664107337960" duration="417000" />
       <workItem from="1664113711125" duration="4300000" />
-      <workItem from="1664188524290" duration="13135000" />
+      <workItem from="1664188524290" duration="13224000" />
+      <workItem from="1664247361373" duration="4817000" />
+      <workItem from="1664276263349" duration="3479000" />
     </task>
     <task id="LOCAL-00001" summary="登录功能改变">
       <created>1663858811786</created>
@@ -554,7 +553,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664118035201</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="更新管理员订单催促功能">
+      <created>1664201808015</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1664201808015</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,7 +596,8 @@
     <MESSAGE value="更新管理员器材管理" />
     <MESSAGE value="更新管理员场地管理" />
     <MESSAGE value="更新客户账号信息更改" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新客户账号信息更改" />
+    <MESSAGE value="更新管理员订单催促功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新管理员订单催促功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
