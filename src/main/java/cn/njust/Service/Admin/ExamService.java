@@ -23,8 +23,6 @@ public class ExamService {
        {
            Order o1=new Order(oid,or.getRname(),or.getRid(),or.getUid(),Timestamp.valueOf(simpleDateFormat.format(t1)),Timestamp.valueOf(simpleDateFormat.format(t2)),or.getSum(),"进行中");
            OrderDao.updateOrder(o1);
-           System.out.println("s时间");
-           System.out.println(Timestamp.valueOf(simpleDateFormat.format(t1)));
        }
         if(or.getState().equals("归还审核中"))
         {
