@@ -9,13 +9,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5de2a841-ecdd-45aa-906e-37c66a557529" name="变更" comment="更新管理员剩余功能点">
+    <list default="true" id="5de2a841-ecdd-45aa-906e-37c66a557529" name="变更" comment="修复管理员剩余功能点bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/controller/Admin/EquipmentController_ad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/controller/Admin/EquipmentController_ad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/mo.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/mo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/administrator/shop/equipment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/administrator/shop/equipment.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Admin/ExamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Admin/ExamService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Customer/ViewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Customer/ViewService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/controller/Admin/ExamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/controller/Admin/ExamController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/controller/Admin/MessageController_ad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/controller/Admin/MessageController_ad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/dao/MessageDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/dao/MessageDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/dao/OrderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/entity/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/entity/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/administrator/order/exam.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/administrator/order/exam.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/page/administrator/shop/venue.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/administrator/shop/venue.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client/shop/equipment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client/shop/equipment.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client/order/client_order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client/order/client_order.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client/person/message.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client/person/message.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client/person/modification.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client/person/modification.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client/shop/venue.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client/shop/venue.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -380,7 +387,13 @@
       <workItem from="1664188524290" duration="13224000" />
       <workItem from="1664247361373" duration="4817000" />
       <workItem from="1664276263349" duration="3637000" />
-      <workItem from="1664280167931" duration="2374000" />
+      <workItem from="1664280167931" duration="2907000" />
+      <workItem from="1664284077904" duration="73000" />
+      <workItem from="1664284512283" duration="1498000" />
+      <workItem from="1664286475543" duration="699000" />
+      <workItem from="1664365650704" duration="2044000" />
+      <workItem from="1664526128482" duration="5299000" />
+      <workItem from="1664764649432" duration="1089000" />
     </task>
     <task id="LOCAL-00001" summary="登录功能改变">
       <created>1663858811786</created>
@@ -557,7 +570,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664279917486</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="修复管理员剩余功能点bug">
+      <created>1664283540111</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1664283540111</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,7 +615,8 @@
     <MESSAGE value="更新客户账号信息更改" />
     <MESSAGE value="更新管理员订单催促功能" />
     <MESSAGE value="更新管理员剩余功能点" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新管理员剩余功能点" />
+    <MESSAGE value="修复管理员剩余功能点bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复管理员剩余功能点bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

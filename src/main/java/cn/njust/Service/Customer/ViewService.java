@@ -54,7 +54,7 @@ public class ViewService {
         return limessage;
     }
 
-    public void sendMessage(String uid,String oid)
+    public void sendMessage(String uid,String oid,String type)
     {
         java.util.Date date = new java.util.Date();
         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -72,7 +72,7 @@ public class ViewService {
             mid = stringBuffer.toString();
         }
             while(MessageDao.findMessageByMessageId(mid)!=null);
-            Message ms=new Message(uid,oid,Timestamp.valueOf(simpleDateFormat.format(t)),mid);
+            Message ms=new Message(uid,oid,Timestamp.valueOf(simpleDateFormat.format(t)),mid,type);
             MessageDao.insertMessage(ms);
 
     }

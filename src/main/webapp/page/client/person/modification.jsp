@@ -1,6 +1,14 @@
-<%@ page import="cn.njust.entity.User" %>
+<%@ page import="cn.njust.entity.User" import="java.util.*"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--<%@ page import=""@%>--%>
+
+
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -156,17 +164,17 @@
                         </div>
                         <div class="modal-body">
                             <form action="../servlet/UserController" >
-                                <h5>用户名：<input  name="user_id" type="text" readonly unselectable="on" value="<%=u.getId()%>" style= "background-color:transparent;border:0;width: 50px"></h5><br>
+                            <h5>用户名：<input  name="user_id" type="text" readonly unselectable="on" value="<%=u.getId()%>" style= "background-color:transparent;border:0;width: 50px"></h5><br>
                                 <h5>我的名称：<input  name="user_name" type="text" readonly unselectable="on" value="<%=u.getName()%>" style= "background-color:transparent;border:0;width: 50px"></h5>
-                                <br><br>
+                                <br>
                                 <h5>手机号：<input  name="user_number" type="text" readonly unselectable="on" value="<%=u.getNumber()%>" style= "background-color:transparent;border:0;width: 50px"></h5>
-                                <br><br>
+                                <br>
                                 <h5>修改密码：</h5>
                                 <input type="password" name="password1" placeholder="请输入新密码">
                                 <br><br>
                                 <h5>确认密码：</h5>
-                                <input type="password" name="password2" placeholder="请重复新密码">
-<%--                            </form>--%>
+                                <input type="password" name="password2" placeholder="请重复新密码" onkeyup="checkPass()"><span id="tishi"></span>
+                            </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -175,20 +183,20 @@
                     </div>
                 </div>
             </div>
-            <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h2 class="modal-title"><td> <div style="color:black; align:center;">请点击下方确定查看结果</div> </td> </h2>
-                        </div>
-                        <div class="modal-footer">
-<%--                            <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>--%>
-                         <input name="ok2" type="submit" class="btn btn-primary" value="确定" >
-                        </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+<%--            <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">--%>
+<%--                <div class="modal-dialog">--%>
+<%--                    <div class="modal-content">--%>
+<%--                        <div class="modal-header">--%>
+<%--                            <h2 class="modal-title"><td> <div style="color:black; align:center;">请点击下方确定查看结果</div> </td> </h2>--%>
+<%--                        </div>--%>
+<%--                        <div class="modal-footer">--%>
+<%--&lt;%&ndash;                            <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>&ndash;%&gt;--%>
+<%--                         <input name="ok2" type="submit" class="btn btn-primary" value="确定" >--%>
+<%--                        </div>--%>
+<%--                        </form>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
         </section>
     </div>
     <!-- /.主题内容底部-->

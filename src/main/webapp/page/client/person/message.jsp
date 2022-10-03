@@ -159,6 +159,8 @@
                                         {
                                             for(Message i:listMessage)
                                             {
+                                                if(i.getType().equals("0"))
+                                                {
                                     %>
                                     <tr>
                                         <td><%=i.getId()%></td>
@@ -166,11 +168,21 @@
                                             <%=u.getName()%>，您的订单<%=i.getOid()%>尚未完成，请尽快归还！</td>
                                     </tr>
                                     <%
+                                                }
+                                                else if(i.getType().equals("1"))
+                                                {
+
+                                    %>
+                                    <tr>
+                                        <td><%=i.getId()%></td>
+                                        <td><%User ur=(User) request.getSession().getAttribute("user");%>
+                                            <%=u.getName()%>，您的订单<%=i.getOid()%>审批未通过，请线下联系管理员！</td>
+                                    </tr>
+                                    <%
+                                                }
                                             }
                                         }
                                     %>
-
-
                                     </tbody>
                                     <tfoot>
                                     <tr>

@@ -7,7 +7,18 @@ public class Message {
     private String uid;
     private String oid;
     private Timestamp time;
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     private String id;
+
+    public String getType() {
+        return type;
+    }
+
+    private String type;
 
     public String getUid() {
         return uid;
@@ -41,11 +52,12 @@ public class Message {
     public void setTime(Timestamp time) {
         this.time = time;
     }
-    public Message(String uid, String oid, Timestamp time, String id) {
+    public Message(String uid, String oid, Timestamp time, String id,String type) {
         this.uid = uid;
         this.oid = oid;
         this.time = time;
         this.id = id;
+        this.type=type;
     }
     public Message(){}
 }

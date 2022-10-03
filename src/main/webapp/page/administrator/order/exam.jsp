@@ -185,15 +185,15 @@
                             <h2 class="modal-title" id="myModalLabel">订单详情</h2>
                           </div>
                           <div class="modal-body">
-                            <form action="#" >
-                              <h5>租品编号： <input  name="order_id" type="text" readonly unselectable="on" value="<%=i.getOid()%>" style= "background-color:transparent;border:0;width: 90px"></h5><br><br>
+                            <form action="../servlet/ExamController" >
+                              <h5>订单编号： <input  name="order_id" type="text" readonly unselectable="on" value="<%=i.getOid()%>" style= "background-color:transparent;border:0;width: 160px"></h5><br><br>
                               <h5>租品编号： <input  name="rent_id" type="text" readonly unselectable="on" value="<%=i.getRid()%>" style= "background-color:transparent;border:0;width: 120px"></h5><br><br>
-                              <h5>下单时间： <input  name="order_time" type="text" readonly unselectable="on" value="<%=i.getOrderTime()%>" style= "background-color:transparent;border:0;width: 160px"></h5><br><br>
+                              <h5>下单时间： <input  name="order_time" type="text" readonly unselectable="on" value="<%=i.getOrderTime()%>" style= "background-color:transparent;border:0;width: 300px"></h5><br><br>
                               <h5>订单状态： <input  name="order_state" type="text" readonly unselectable="on" value="<%=i.getState()%>" style= "background-color:transparent;border:0;width: 160px"></h5><br><br>
 <%--                            </form>--%>
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-default " data-dismiss="modal">拒绝</button>
+                            <input id="myModal<%=i.getOid()%>" name="jj" type="submit" class="btn btn-danger" value="拒绝">
                             <input id="myModal<%=i.getOid()%>" name="tg" type="submit" class="btn btn-danger" value="通过">
                           </div>
                           </form>

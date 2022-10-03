@@ -57,6 +57,7 @@ public class MessageDao {
             j.setUid(i.get("user_id").toString());
             j.setId(i.get("message_id").toString());
             j.setTime(Timestamp.valueOf(i.get("message_time").toString()));
+            j.setType(i.get("message_type").toString());
             messages.add(j);
         }
         return messages;
@@ -111,7 +112,7 @@ public class MessageDao {
             {
 
                 Map<String, Object> ma=lis.get(0);
-                Message or = new Message(ma.get("user_id").toString(),ma.get("order_id").toString(),Timestamp.valueOf(ma.get("message_time").toString()), mid);
+                Message or = new Message(ma.get("user_id").toString(),ma.get("order_id").toString(),Timestamp.valueOf(ma.get("message_time").toString()), mid,ma.get("message_type").toString());
                 return or;
             }
         } catch (SQLException e) {

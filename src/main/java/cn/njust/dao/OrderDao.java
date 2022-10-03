@@ -125,7 +125,9 @@ public class OrderDao extends BaseDao{
      */
     public static void updateOrder(Order order) {
         Map<String, Object> map = new HashMap<>();
-        map.put("order_state",order.getState() );//更新状态
+        map.put("order_state",order.getState());//更新状态
+        map.put("order_time",order.getOrderTime());
+        map.put("return_time",order.getReturnTime());
         Map<String, Object> whereMap = new HashMap<>();
         whereMap.put("order_id", order.getOid());//根据订单id寻找
         try {

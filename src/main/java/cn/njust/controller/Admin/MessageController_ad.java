@@ -19,7 +19,7 @@ public class MessageController_ad extends HttpServlet {
         String cus=request.getParameter("user_id");
         request.setAttribute("orderList",vs.viewOrder());
         if(m!=null)
-        ms.sendMessage(cus,id);
+        ms.sendMessage(cus,id,"0");
         request.getRequestDispatcher("../page/administrator/order/hurry.jsp").forward(request, response);
     }
 

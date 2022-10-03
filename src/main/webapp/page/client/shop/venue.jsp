@@ -157,8 +157,6 @@
                                     <tbody>
 
                                     <!-- 此处插入c标签 -->
-
-
                                     <%
                                         List<Venue> listEquip=(List<Venue>) request.getAttribute("venueList");
 //                                        System.out.println("fedsaf");
@@ -208,8 +206,8 @@
 <%--                                                        <form action="../servlet/VenueController">--%>
                                                             <h2 class="from_title" >下单成功！请等待管理员审核。</h2>
                                                             <div class="modal-footer">
-<%--                                                                <button type="button" class="btn btn-primary" data-dismiss="modal">确定--%>
-<%--                                                                </button>--%>
++
+
                                                                 <input name="ok" type="submit" class="btn btn-primary" value="确定">
                                                             </div>
                                                         </form>
@@ -224,8 +222,6 @@
                                             }
                                         }
                                     %>
-
-
                                     </tbody>
                                     <tfoot>
                                     <tr>

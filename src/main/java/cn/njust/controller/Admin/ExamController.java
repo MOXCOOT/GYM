@@ -17,14 +17,19 @@ public class ExamController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         Object tg=request.getParameter("tg");
+        Object jj=request.getParameter("jj");
         String oid=request.getParameter("order_id");
-        ViewAllService vs = new ViewAllService();
-        request.setAttribute("orderList",vs.viewOrder());
+        ExamService es=new ExamService();
+        if(jj!=null)
+        {
+            es.rejectOrder(oid);
+        }
         if(tg!=null)
         {
-            ExamService es=new ExamService();
             es.resetTime(oid);
         }
+        ViewAllService vs = new ViewAllService();
+        request.setAttribute("orderList",vs.viewOrder());
         request.getRequestDispatcher("../page/administrator/order/exam.jsp").forward(request, response);
 
     }

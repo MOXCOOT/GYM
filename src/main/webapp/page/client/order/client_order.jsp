@@ -171,6 +171,8 @@
                                         {
                                             for(Order i:listOrder)
                                             {
+                                                if(i.getState().equals("已完成")==false)
+                                                {
                                     %>
                                     <tr>
                                         <td><%=i.getOid()%></td>
@@ -203,6 +205,7 @@
 
                                     </tr>
                                     <%
+                                                }
                                             }
                                         }
                                     %>

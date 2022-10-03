@@ -222,9 +222,6 @@
                                                 if(i.getPrice()>=0)
                                                 {
                                     %>
-
-
-
                                     <tr>
                                         <td><%=i.getId()%></td>
                                         <td><%=i.getName()%></td>
