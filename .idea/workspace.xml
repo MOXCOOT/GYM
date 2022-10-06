@@ -11,19 +11,12 @@
   <component name="ChangeListManager">
     <list default="true" id="5de2a841-ecdd-45aa-906e-37c66a557529" name="变更" comment="修复管理员剩余功能点bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Admin/ExamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Admin/ExamService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Customer/ViewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/Service/Customer/ViewService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/controller/Admin/ExamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/controller/Admin/ExamController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/controller/Admin/MessageController_ad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/controller/Admin/MessageController_ad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/dao/MessageDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/dao/MessageDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/dao/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/entity/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/entity/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/administrator/order/exam.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/administrator/order/exam.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/njust/dao/EquipmentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/njust/dao/EquipmentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/administrator/shop/equipment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/administrator/shop/equipment.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/page/administrator/shop/venue.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/administrator/shop/venue.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client/order/client_order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client/order/client_order.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client/person/message.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client/person/message.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client/person/modification.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client/person/modification.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client/shop/venue.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client/shop/venue.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/client/shop/equipment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/client/shop/equipment.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/login.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +73,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="库" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.36204576" />
@@ -393,7 +387,8 @@
       <workItem from="1664286475543" duration="699000" />
       <workItem from="1664365650704" duration="2044000" />
       <workItem from="1664526128482" duration="5299000" />
-      <workItem from="1664764649432" duration="1089000" />
+      <workItem from="1664764649432" duration="1208000" />
+      <workItem from="1665044205650" duration="8878000" />
     </task>
     <task id="LOCAL-00001" summary="登录功能改变">
       <created>1663858811786</created>
@@ -577,7 +572,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664283540111</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="修复管理员剩余功能点bug">
+      <created>1664765842698</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1664765842698</updated>
+    </task>
+    <task id="LOCAL-00028" summary="修复管理员剩余功能点bug">
+      <created>1664765856716</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1664765856716</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

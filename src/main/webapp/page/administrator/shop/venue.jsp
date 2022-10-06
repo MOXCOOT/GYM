@@ -241,7 +241,7 @@
                                                             <h5>场地编号：<input  name="veid" type="text" readonly unselectable="on" value="<%=i.getId()%>" style= "background-color:transparent;border:0;width: 90px"></h5><br><br>
                                                             <h5>场地名称：<input  name="vename" type="text" readonly unselectable="on" value="<%=i.getName()%>" style= "background-color:transparent;border:0;width: 90px"></h5><br><br>
                                                             <h5>项目：<input  name="vetype" type="text" readonly unselectable="on" value="<%=i.getType()%>" style= "background-color:transparent;border:0;width: 90px"></h5><br><br>
-                                                            <h5>金额：<input type="text" name="veprice">
+                                                            <h5>金额：<input type="text" name="veprice" id="jine">
                                                             <br><br>
                                                             <h5>状态：</h5>
                                                             <select name="vestate">
@@ -305,6 +305,53 @@
         </div>
     </footer>
 </div>
+
+<script>
+    var zsw1 = document.getElementById('name');
+    var zsw2 = document.getElementById('type');
+    var zsw4 = document.getElementById('price');
+    var  kjl2=document.getElementById('jine');
+    kjl2.onblur=function ()
+    {
+        if(kjl2.value==='')
+            alert("场地金额不能为空！")
+        if(kjl2.value<0)
+        {
+            alert("场地金额不能小于0")
+        }
+        if(isNaN(Number(kjl2.value)))
+        {
+            alert("请输入数字")
+        }
+    }
+    zsw1.onblur = function (){
+        if((zsw1.value)===''){
+            alert("场地名称不能为空！")
+        }
+    }
+    zsw2.onblur = function (){
+        if((zsw2.value)===''){
+            alert("场地项目不能为空！")
+        }
+    }
+    zsw4.onblur = function (){
+        if((zsw4.value)==='')
+        {
+            alert("场地金额不能为空！")
+        }
+
+            if(zsw4.value<0)
+            {
+                alert("场地金额不能小于0")
+            }
+
+            if(isNaN(Number(zsw4.value)))
+            {
+                alert("请输入数字")
+            }
+
+    }
+</script>
 
 <script src=" ../js/jquery.min.js"></script>
 <script src=" ../js/bootstrap.bundle.min.js"></script>

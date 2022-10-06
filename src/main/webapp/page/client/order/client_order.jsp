@@ -181,7 +181,20 @@
                                         <td><%=i.getReturnTime()%></td>
                                         <td><%=i.getSum()%></td>
                                         <td><%=i.getState()%></td>
+                                        <%
+                                            if(i.getState().equals("进行中")||i.getState().equals("已逾期"))
+                                            {
+                                        %>
                                         <td><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal<%=i.getOid()%>">完成订单</button></td>
+                                        <%
+                                            }
+                                            else
+                                            {
+                                        %>
+                                        <td>--------</td>
+                                        <%
+                                            }
+                                        %>
                                         <div class="modal fade" id="myModal<%=i.getOid()%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">

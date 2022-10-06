@@ -164,7 +164,7 @@
                                         {
                                             for(Equipment i:listEquip)
                                             {
-                                                if(i.getState().equals("可租赁")&&i.getNumber()>=0&&i.getPrice()>=0)
+                                                if(i.getState().equals("可租赁")&&i.getNumber()>0&&i.getPrice()>=0)
                                                 {
                                     %>
                                     <tr>

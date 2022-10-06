@@ -247,10 +247,10 @@
                                                             <h5>器材名称：<input  name="eqname" type="text" readonly unselectable="on" value="<%=i.getName()%>" style= "background-color:transparent;border:0;width: 90px"></h5><br><br>
                                                             <h5>器材项目：<input  name="eqtype" type="text" readonly unselectable="on" value="<%=i.getType()%>" style= "background-color:transparent;border:0;width: 90px"></h5><br><br>
                                                             <h5>余量：</h5>
-                                                            <input type="text" name="eqnumber">
+                                                            <input type="text" id="yuliang" name="eqnumber" >
                                                             <br><br>
                                                             <h5>金额：</h5>
-                                                            <input type="text" name="eqprice" >
+                                                            <input type="text"  id="jine" name="eqprice">
                                                             <br><br>
                                                             <h5>状态：</h5>
                                                             <select name="eqstate">
@@ -295,6 +295,8 @@
                                                 </div>
                                             </div>
                                         </div>
+
+
                                         </form>
 
                                     </tr>
@@ -329,6 +331,65 @@
         </div>
     </footer>
 </div>
+<script>
+    var zsw1 = document.getElementById('name');
+    var zsw2 = document.getElementById('type');
+    var zsw3 = document.getElementById('numm');
+    var zsw4 = document.getElementById('price');
+    var kjl1=document.getElementById('yuliang');
+    var  kjl2=document.getElementById('jine');
+    kjl1.onblur=function ()
+    {
+        let val=parseInt(kjl1.value);
+        if(kjl1.value==='')
+            alert("器材数量不能为空！")
+        if(kjl1.value<0)
+            alert("器材数量不能小于0")
+        if(isNaN(Number(kjl1.value)))
+            alert("请输入数字")
+    }
+    kjl2.onblur=function ()
+    {
+        if(kjl1.value==='')
+            alert("器材金额不能为空！")
+        if(kjl2.value<0)
+        {
+            alert("器材金额不能小于0")
+        }
+        if(isNaN(Number(kjl2.value)))
+        {
+            alert("请输入数字")
+        }
+    }
+    zsw1.onblur = function (){
+        if((zsw1.value)===''){
+            alert("器材名称不能为空！")
+        }
+    }
+    zsw2.onblur = function (){
+        if((zsw2.value)===''){
+            alert("器材类型不能为空！")
+        }
+    }
+    zsw3.onblur = function (){
+        if((zsw3.value)===''){
+            alert("器材余量不能为空！")
+        }
+        if(zsw3.value<0)
+            alert("器材数量不能小于0")
+        if(isNaN(Number(zsw3.value)))
+            alert("请输入数字")
+    }
+    zsw4.onblur = function (){
+        if((zsw4.value)==='')
+            alert("器材金额不能为空！")
+            if(zsw4.value<0)
+                alert("器材数量不能小于0")
+            if(isNaN(Number(zsw4.value)))
+                alert("请输入数字")
+
+    }
+</script>
 
 <script src=" ../js/jquery.min.js"></script>
 <script src=" ../js/bootstrap.bundle.min.js"></script>

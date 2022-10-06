@@ -104,8 +104,8 @@ public class EquipmentDao extends BaseDao {
     }
     public static void updateEquipment(Equipment equipment) {
         Map<String, Object> map = new HashMap<>();
-        map.put("equipment_number",equipment.getNumber() );//更新数量
-        map.put("equipment_price",equipment.getPrice() );//更新价格
+            map.put("equipment_number",equipment.getNumber() );//更新数量
+            map.put("equipment_price",equipment.getPrice() );//更新价格
         map.put("equipment_state",equipment.getState() );//更新状态
         Map<String, Object> whereMap = new HashMap<>();
         whereMap.put("equipment_id",equipment.getId());//根据id寻找

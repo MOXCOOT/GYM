@@ -20,10 +20,10 @@
   <div class="container_from container--signup">
     <form action="../servlet/LoginController" class="from" >
       <h2 class="from_title">注册账号</h2>
-      <input name="name_sub" type="text" placeholder="姓名" class="input">
-      <input name="phone" type="text" placeholder="手机号" class="input">
-      <input name="pwd1" type="password" placeholder="密码" class="input">
-      <input name="pwd2" type="password" placeholder="确认密码" class="input">
+      <input name="name_sub" type="text" placeholder="姓名" class="input"  required autofocus>
+      <input name="phone" type="text" placeholder="手机号" class="input" required autofocus>
+      <input name="pwd1" type="password" placeholder="密码" class="input"  required autofocus>
+      <input name="pwd2" type="password" placeholder="确认密码" class="input"  required autofocus>
       <input type="submit" name="sub" class="btn" value="点击注册">
     </form>
   </div>
